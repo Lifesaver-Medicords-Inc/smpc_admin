@@ -1,0 +1,14 @@
+2025-08-18 16:39:25.898 +08:00 [DBG] Test debug message
+2025-08-18 16:39:25.924 +08:00 [INF] Test info message
+2025-08-18 16:39:25.924 +08:00 [ERR] Test error message
+2025-08-18 16:42:07.406 +08:00 [DBG] Test debug message
+2025-08-18 16:42:07.430 +08:00 [INF] Test info message
+2025-08-18 16:42:07.431 +08:00 [ERR] Test error message
+2025-08-18 16:42:15.912 +08:00 [ERR] POST request failed: /login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 43
+2025-08-18 16:43:31.352 +08:00 [ERR] POST request failed: /login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 43
