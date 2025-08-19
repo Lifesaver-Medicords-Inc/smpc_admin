@@ -9,7 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using smpc_admin.Pages.Login;
 using smpc_admin.Services;
-using smpc_admin.Helpers;
+using smpc_admin.Utils;
+using smpc_admin.AccessControl;
+using smpc_admin.Config;
+using smpc_admin.Models;
+
+
 
 namespace smpc_admin.Pages.Layout
 {
@@ -17,72 +22,84 @@ namespace smpc_admin.Pages.Layout
     {
 
 
-
-        private int tabCount = 0;
         public MainLayoutForm()
         {
             InitializeComponent();
+            PopulateNavigationTreeView();
+            this.FormClosed += MainForm_FormClosed;
         }
 
-        private void MainLayoutForm_Load(object sender, EventArgs e)
+        private void PopulateNavigationTreeView()
         {
-            LoginForm login = new LoginForm();
+            NavigationBarTreeView.Nodes.Clear();
 
-            if (DialogResult.OK == login.ShowDialog())
+            foreach (var item in NavigationConfig.Items)
             {
-                this.Enabled = true;
+                if (!UserSession.HasAccess(item.Code)) continue;
+
+                TreeNode parentNode = new TreeNode(item.Text)
+                {
+                    Name = item.Code
+                };
+
+                foreach (var child in item.Children)
+                {
+                  if (!UserSession.HasAccess(child.Code)) continue;
+
+                    TreeNode childNode = new TreeNode(child.Text)
+                    {
+                        Name = child.Code
+                    };
+
+                    // If child has sub-children
+                    foreach (var grandchild in child.Children)
+                    {
+                        if (!UserSession.HasAccess(grandchild.Code)) continue;
+
+                        var grandchildNode = new TreeNode(grandchild.Text)
+                        {
+                            Name = grandchild.Code 
+                        };
+                        childNode.Nodes.Add(grandchildNode);
+                    }
+                    parentNode.Nodes.Add(childNode);
+                }
+
+                NavigationBarTreeView.Nodes.Add(parentNode);
             }
-            else
-            {
-                Application.Exit();
-            }
+
+            NavigationBarTreeView.ExpandAll();
+
         }
-
-
 
 
         public void showForm(string tabTitle, Control control)
         {
-            tabCount++;
-            Button closeButton = new Button();
-            closeButton.Text = "X";
-            closeButton.Size = new Size(20, 20);
-            closeButton.Click += removeTab;
-            closeButton.ForeColor = Color.Red;
 
-            TabPage newTab = new TabPage(tabTitle);
-            newTab.Controls.Add(closeButton);
-            closeButton.Location = new Point(newTab.Width, 10); // Adjust position as needed
+            if (tabTitle == null || control == null) return;
 
-            //control.Width = this.Width - 235; 
-            viewTabContainer.Height = this.Height * 2;
-            //control.Height = this.Height;
-            control.Width = this.Width - 550;
-            newTab.Controls.Add(control);
-            newTab.AutoScroll = true;
-            viewTabContainer.TabPages.Add(newTab);
-            viewTabContainer.SelectTab(newTab);
+            MainPanel.Controls.Clear();
+            control.Dock = DockStyle.Fill;
+            MainPanel.Controls.Add(control);
         }
         private void removeTab(object sender, EventArgs e)
         {
-            viewTabContainer.TabPages.Remove(viewTabContainer.SelectedTab);
-            //tabControl1.SelectTab();
+            MainPanel.Controls.Clear();
         }
 
-
-        private void Sidebar_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void navigationBarTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            // || e.Node.Name.Contains("Sales Order") || e.Node.Name.Contains("Ship Type Setup") e.Node.Name.Contains("PURCHASE ORDER") ||
-            if (e.Node.Name.Contains("DASHBOARD") || e.Node.Name.Contains("PURCHASE RETURN"))
-            {
-                Utils.ShowDialogMessage("error", "This module is not available at the moment!");
-                return;
-            }
-            if (!e.Node.Name.Contains("parent"))
-            {
+            var code = e.Node.Name;
+
+             if (!UserSession.HasAccess(code)) return;
+
                 RoutesService route = new RoutesService(e.Node.Name);
                 showForm(route.GetTitle(), route.GetForm());
-            }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

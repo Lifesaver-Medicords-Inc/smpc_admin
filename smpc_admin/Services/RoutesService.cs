@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using smpc_admin.Pages.AccessControls.PositionAccess;
+using smpc_admin.Pages.AccessControls;
+using smpc_admin.Pages.Positions;
 
 
 
@@ -16,40 +17,9 @@ namespace smpc_admin.Services
         Dictionary<string, Control> _pages = new Dictionary<string, Control>()
         {
 
-            /*
-            //========================================================================
-            // SETUP  
-            { "ITEM ENTRY", new frm_Item_Entry() },
-            { "BUSINESS PARTNER INFO", new BusinessPartnerInfo()  },
-            { "CANVASS SHEET", new CanvassSheet()},
-            { "PURCHASING LIST", new NewPurchasingList() },
-
-            { "ITEM BRAND", new frm_item_brand_setup()  },
-            { "ITEM NAME", new frm_item_name_setup()},
-            { "ITEM TYPE", new frm_item_type_setup()  },
-            { "ITEM CLASS", new frm_item_class_setup()  },
-            { "ITEM MATERIAL", new frm_item_material_setup()  },
-            { "ITEM PUMP COUNT", new frm_item_pump_count_setup()  },
-            { "ITEM PUMP TYPE", new frm_item_pump_type_setup()  },
-            { "UNIT OF MEASURE", new frm_unit_of_measure_setup()  },
-            { "SOCIAL MEDIA", new frm_social_media_setup() },
-
-            // OTHER SETUP
-           { "PAYMENT TERMS", new Inventory_SMPC.Pages.Setup.frm_payment_terms_setup()  },
-           { "ENTITY TYPE", new frm_entity_type() },
-           { "INDUSTRIES", new frm_industries() },
-           { "POSITION", new frm_position_setup() },
-           { "BOM", new bom() },
-           { "BOQ", new BOQ() },
-
-
-            */
-
-
-           // {"ADMIN POSITIONS", },
-            {"ADMIN POSITION ACCESS", new PositionAccessForm()}
-           // {"ADMIN USER PERMISSION",  }
-
+            {"ADMIN ACCESS CONTROL", new AccessControlForm()},
+            {"ADMIN POSITIONS", new PositionsForm()  },
+ 
 
         };
 
@@ -60,12 +30,15 @@ namespace smpc_admin.Services
         }
         public Control GetForm()
         {
-            return _pages.First(v => v.Key == this._selectedRoute).Value;
+            return _pages.TryGetValue(this._selectedRoute, out var pageValue)
+                ? pageValue
+                : null;
         }
 
         public String GetTitle()
         {
-            return _pages.First(v => v.Key == this._selectedRoute).Key;
+
+            return _pages.ContainsKey(_selectedRoute) ? _selectedRoute : string.Empty;
         }
     }
 }

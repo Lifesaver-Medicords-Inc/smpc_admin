@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using smpc_admin.Pages.Layout;
+using smpc_admin.Pages.Login;
 using Microsoft.Extensions.Configuration;
-using smpc_admin.Helpers;
+using smpc_admin.Utils;
 using smpc_admin.Logging;
 
 namespace smpc_admin
@@ -38,7 +38,7 @@ namespace smpc_admin
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainLayoutForm());
+            Application.Run(new LoginForm());
         }
     }
 }

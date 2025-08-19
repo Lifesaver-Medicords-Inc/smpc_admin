@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using smpc_admin.Models;
-using smpc_admin.Enums;
+
 
 namespace smpc_admin.AccessControl
 {
-    public class UserSession
+    public static class UserSession
     {
         public static UserModel CurrentUser { get; private set; }
-        public static IEnumerable<PositionAccessModel> CurrentPositionAccess { get; private set; }
+        public static IEnumerable<PositionAccessModel> CurrentPositionAccess { get; private set; } = Enumerable.Empty<PositionAccessModel>();
         public static UserPermissionModel CurrentUserPermission { get; private set; }
 
         public static void SetCurrentUser(UserModel user)
@@ -21,7 +21,7 @@ namespace smpc_admin.AccessControl
 
         public static void SetCurrentPositionAccess(IEnumerable<PositionAccessModel> access)
         {
-            CurrentPositionAccess = access;
+            CurrentPositionAccess = access ?? Enumerable.Empty<PositionAccessModel>();
         }
 
         public static void SetCurrentUserPermission(UserPermissionModel permissions)
@@ -29,41 +29,33 @@ namespace smpc_admin.AccessControl
             CurrentUserPermission = permissions;
         }
 
-        //User permission [create,update,delete]
-        public static bool HasPermission(UserPermission permissioCode)
+        // Check permission: "create", "update", "delete"
+        public static bool HasPermission(string permissionKey)
         {
+            if (string.IsNullOrWhiteSpace(permissionKey) || CurrentUserPermission == null)
+                return false;
 
-            if (CurrentUserPermission == null) return false;
-
-            switch (permissioCode)
+            switch (permissionKey)
             {
-                case UserPermission.Create:
+                case "create":
                     return CurrentUserPermission.CanCreate;
-                case UserPermission.Update:
+                case "update":
                     return CurrentUserPermission.CanUpdate;
-                case UserPermission.Delete:
+                case "delete":
                     return CurrentUserPermission.CanDelete;
                 default:
                     return false;
             }
         }
 
-        //Position Access [access code]
+        // Check access by string code like "ADMIN POSITIONS", "USER PERMISSION"
         public static bool HasAccess(string accessCode)
         {
+            if (string.IsNullOrWhiteSpace(accessCode) || !CurrentPositionAccess.Any())
+                return false;
 
-            if (CurrentPositionAccess.Any() || CurrentPositionAccess == null) return false;
-
-            var ecode = PositionExtensions.FromCodeString(accessCode);
-
-            if (ecode == null) return false;
-
-            var stringCode = ecode.ToString();
-
-            var code = CurrentPositionAccess.Where(a => a.Code == stringCode);
-
-            return code != null;
-            
+            return CurrentPositionAccess.Any(a =>
+                string.Equals(a.Code, accessCode.Trim(), StringComparison.OrdinalIgnoreCase));
         }
     }
 }

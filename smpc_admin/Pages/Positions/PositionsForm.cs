@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace smpc_admin.Pages.AccessControls.PositionAccess
+namespace smpc_admin.Pages.Positions
 {
-    public partial class PositionAccessForm : UserControl
+    public partial class PositionsForm : UserControl
     {
-        public PositionAccessForm()
+        public PositionsForm()
         {
             InitializeComponent();
         }

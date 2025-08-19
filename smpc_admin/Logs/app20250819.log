@@ -1,0 +1,114 @@
+2025-08-19 09:11:20.926 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3000
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext& context)
+   at System.Net.Http.HttpClientHandler.GetRequestStreamCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 42
+2025-08-19 09:11:23.542 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3000
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext& context)
+   at System.Net.Http.HttpClientHandler.GetRequestStreamCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 42
+2025-08-19 09:14:46.327 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:14:51.571 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:10.926 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:13.893 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:14.618 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:14.898 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:15.103 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:15.408 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:15.556 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:15.740 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:15.879 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:16.032 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:16.149 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:15:16.270 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:16:23.245 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:16:38.669 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:16:39.310 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:16:39.501 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:16:39.655 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:16:39.833 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:16:50.643 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44
+2025-08-19 09:17:30.872 +08:00 [ERR] POST request failed: login
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 401 (Unauthorized).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at smpc_admin.Helpers.HttpClientHelper.<Post>d__2`1.MoveNext() in D:\IGIE\ERP\smpc_admin\smpc_admin\Helpers\HttpClientHelper.cs:line 44

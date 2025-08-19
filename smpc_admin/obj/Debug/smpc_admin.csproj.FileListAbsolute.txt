@@ -67,4 +67,5 @@ D:\IGIE\ERP\smpc_admin\smpc_admin\bin\Debug\appsettings.Development.json
 D:\IGIE\ERP\smpc_admin\smpc_admin\bin\Debug\appsettings.json
 D:\IGIE\ERP\smpc_admin\smpc_admin\obj\Debug\smpc_admin.Pages.Login.LoginForm.resources
 D:\IGIE\ERP\smpc_admin\smpc_admin\bin\Debug\appsettings.Production.json
-D:\IGIE\ERP\smpc_admin\smpc_admin\obj\Debug\smpc_admin.Pages.AccessControls.PositionAccess.PositionAccessForm.resources
+D:\IGIE\ERP\smpc_admin\smpc_admin\obj\Debug\smpc_admin.Pages.Positions.PositionsForm.resources
+D:\IGIE\ERP\smpc_admin\smpc_admin\obj\Debug\smpc_admin.Pages.AccessControls.AccessControlForm.resources

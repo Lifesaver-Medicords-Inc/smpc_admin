@@ -29,18 +29,9 @@ namespace smpc_admin.Pages.Layout
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("User Permissions");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Position Access");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Access Controls", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Positions");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Admin tools", new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4});
             this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.navigationBarTreeView = new System.Windows.Forms.TreeView();
-            this.viewTabContainer = new System.Windows.Forms.TabControl();
+            this.NavigationBarTreeView = new System.Windows.Forms.TreeView();
+            this.MainPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
             this.mainSplitContainer.Panel1.SuspendLayout();
             this.mainSplitContainer.Panel2.SuspendLayout();
@@ -56,43 +47,33 @@ namespace smpc_admin.Pages.Layout
             // 
             // mainSplitContainer.Panel1
             // 
-            this.mainSplitContainer.Panel1.Controls.Add(this.navigationBarTreeView);
+            this.mainSplitContainer.Panel1.Controls.Add(this.NavigationBarTreeView);
             // 
             // mainSplitContainer.Panel2
             // 
-            this.mainSplitContainer.Panel2.Controls.Add(this.viewTabContainer);
+            this.mainSplitContainer.Panel2.Controls.Add(this.MainPanel);
             this.mainSplitContainer.Size = new System.Drawing.Size(800, 450);
             this.mainSplitContainer.SplitterDistance = 182;
             this.mainSplitContainer.TabIndex = 0;
             // 
-            // navigationBarTreeView
+            // NavigationBarTreeView
             // 
-            this.navigationBarTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationBarTreeView.Location = new System.Drawing.Point(0, 0);
-            this.navigationBarTreeView.Name = "navigationBarTreeView";
-            treeNode1.Name = "ADMIN USER PERMISSION";
-            treeNode1.Text = "User Permissions";
-            treeNode2.Name = "ADMIN POSITION ACCESS";
-            treeNode2.Text = "Position Access";
-            treeNode3.Name = "accessControl";
-            treeNode3.Text = "Access Controls";
-            treeNode4.Name = "ADMIN POSITION";
-            treeNode4.Text = "Positions";
-            treeNode5.Name = "ADMIN TOOLS";
-            treeNode5.Text = "Admin tools";
-            this.navigationBarTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5});
-            this.navigationBarTreeView.Size = new System.Drawing.Size(182, 450);
-            this.navigationBarTreeView.TabIndex = 0;
+            this.NavigationBarTreeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NavigationBarTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NavigationBarTreeView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavigationBarTreeView.Location = new System.Drawing.Point(0, 0);
+            this.NavigationBarTreeView.Name = "NavigationBarTreeView";
+            this.NavigationBarTreeView.Size = new System.Drawing.Size(182, 450);
+            this.NavigationBarTreeView.TabIndex = 0;
+            this.NavigationBarTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.navigationBarTreeView_AfterSelect);
             // 
-            // viewTabContainer
+            // MainPanel
             // 
-            this.viewTabContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewTabContainer.Location = new System.Drawing.Point(0, 0);
-            this.viewTabContainer.Name = "viewTabContainer";
-            this.viewTabContainer.SelectedIndex = 0;
-            this.viewTabContainer.Size = new System.Drawing.Size(614, 450);
-            this.viewTabContainer.TabIndex = 0;
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(614, 450);
+            this.MainPanel.TabIndex = 0;
             // 
             // MainLayoutForm
             // 
@@ -102,7 +83,6 @@ namespace smpc_admin.Pages.Layout
             this.Controls.Add(this.mainSplitContainer);
             this.Name = "MainLayoutForm";
             this.Text = "SMPC Admin";
-            this.Load += new System.EventHandler(this.MainLayoutForm_Load);
             this.mainSplitContainer.Panel1.ResumeLayout(false);
             this.mainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
@@ -114,7 +94,7 @@ namespace smpc_admin.Pages.Layout
         #endregion
 
         private System.Windows.Forms.SplitContainer mainSplitContainer;
-        private System.Windows.Forms.TreeView navigationBarTreeView;
-        private System.Windows.Forms.TabControl viewTabContainer;
+        private System.Windows.Forms.TreeView NavigationBarTreeView;
+        private System.Windows.Forms.Panel MainPanel;
     }
 }

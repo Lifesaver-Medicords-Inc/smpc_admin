@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using smpc_admin.Services;
 using Serilog;
+using smpc_admin.Utils;
+using smpc_admin.Models;
+using smpc_admin.AccessControl;
+using smpc_admin.Pages.Layout;
 
 namespace smpc_admin.Pages.Login
 {
@@ -16,6 +20,7 @@ namespace smpc_admin.Pages.Login
     {
         public LoginForm()
         {
+
             InitializeComponent();
         }
         private async void submitBtn_Click(object sender, EventArgs e)
@@ -27,6 +32,27 @@ namespace smpc_admin.Pages.Login
                 // var password = passwordTextBox.Text;
                 var employeeId = "PURCH-PO-8";
                 var password = "PURCH-PO-8";
+
+                var access = new List<PositionAccessModel>
+                {
+                    new PositionAccessModel
+                    {
+                        Id = 0,
+                        PositionId = "1",
+                        Code = "ADMIN TOOLS",
+
+                    },
+                      new PositionAccessModel
+                    {
+                        Id = 1,
+                        PositionId = "2",
+                        Code = "ADMIN ACCESS CONTROL",
+
+                    },
+                };
+
+
+                UserSession.SetCurrentPositionAccess(access);
 
                 if (string.IsNullOrWhiteSpace(employeeId))
                     {
@@ -49,7 +75,9 @@ namespace smpc_admin.Pages.Login
 
                     if (res != null && res.Success)
                     {
-                        this.DialogResult = DialogResult.OK;
+                        var mainForm = new MainLayoutForm();
+                        this.Hide();
+                        mainForm.Show();
                     }
            
             }catch(Exception ex)
