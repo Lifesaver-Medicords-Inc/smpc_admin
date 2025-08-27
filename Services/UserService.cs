@@ -16,7 +16,7 @@ namespace smpc_admin.Services
             return res;
           
         }
-        public static async Task<HttpResponseModel<UserPermissionModel>> GetUserPermissionsAsync(int id)
+        public static async Task<HttpResponseModel<UserPermissionModel>> GetUserPermissionAsync(int id)
         {
             var res = await HttpClientHelper.Get<HttpResponseModel<UserPermissionModel>>($"user-permissions/{id}");
             return res;
@@ -24,7 +24,7 @@ namespace smpc_admin.Services
         }
         public static async Task<HttpResponseModel<UserPermissionModel>> UpdateUserPermissionAsync(UserPermissionModel permissions)
         {
-            var res = await HttpClientHelper.Put<HttpResponseModel<UserPermissionModel>>("user-permissions", permissions);
+            var res = await HttpClientHelper.Put<HttpResponseModel<UserPermissionModel>>($"user-permissions/{permissions.Id}", permissions);
             return res;
         }
     }

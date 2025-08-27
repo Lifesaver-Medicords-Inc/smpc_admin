@@ -1,0 +1,103 @@
+2025-08-26 13:37:13.439 +08:00 [INF] POSITION RES JSON: {"data":{"id":17,"name":"Sales","access":[],"users":null},"message":null,"success":true}
+2025-08-26 15:10:52.715 +08:00 [WRN] API request failed: user-permissions, StatusCode: "MethodNotAllowed", Response: Method Not Allowed
+2025-08-26 15:10:52.789 +08:00 [ERR] Exception during API request: user-permissions
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: M. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 74
+2025-08-26 15:11:39.406 +08:00 [WRN] API request failed: user-permissions, StatusCode: "MethodNotAllowed", Response: Method Not Allowed
+2025-08-26 15:11:39.424 +08:00 [ERR] Exception during API request: user-permissions
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: M. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 74
+2025-08-26 15:13:02.996 +08:00 [WRN] API request failed: user-permissions, StatusCode: "MethodNotAllowed", Response: Method Not Allowed
+2025-08-26 15:13:03.059 +08:00 [ERR] Exception during API request: user-permissions
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: M. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 74
+2025-08-26 15:27:06.811 +08:00 [WRN] API request failed: position-access/update-all-access/20, StatusCode: "BadRequest", Response: {"message":"Access list is empty","success":false}
+2025-08-26 15:27:45.929 +08:00 [WRN] API request failed: position-access/update-all-access/20, StatusCode: "BadRequest", Response: {"message":"Access list is empty","success":false}
+2025-08-26 15:38:34.170 +08:00 [WRN] API request failed: position-access/update-all-access/20, StatusCode: "BadRequest", Response: {"message":"Access list is empty","success":false}
+2025-08-26 15:38:54.084 +08:00 [WRN] API request failed: position-access/update-all-access/20, StatusCode: "BadRequest", Response: {"message":"Access list is empty","success":false}
+2025-08-26 15:47:13.596 +08:00 [WRN] API request failed: position-access/update-all-access/20, StatusCode: "BadRequest", Response: {"message":"Access list is empty","success":false}
+2025-08-26 15:47:40.050 +08:00 [WRN] API request failed: position-access/update-all-access/20, StatusCode: "BadRequest", Response: {"message":"Access list is empty","success":false}
+2025-08-26 15:48:42.090 +08:00 [WRN] API request failed: user-permissions, StatusCode: "MethodNotAllowed", Response: Method Not Allowed
+2025-08-26 15:48:42.129 +08:00 [ERR] Exception during API request: user-permissions
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: M. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 74
+2025-08-26 15:49:34.665 +08:00 [WRN] API request failed: user-permissions, StatusCode: "MethodNotAllowed", Response: Method Not Allowed
+2025-08-26 15:49:34.683 +08:00 [ERR] Exception during API request: user-permissions
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: M. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 74
+2025-08-26 16:20:58.175 +08:00 [WRN] API request failed: user-permissions, StatusCode: "MethodNotAllowed", Response: Method Not Allowed
+2025-08-26 16:20:58.241 +08:00 [ERR] Exception during API request: user-permissions
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: M. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 74
+2025-08-26 16:21:38.677 +08:00 [WRN] API request failed: user-permissions, StatusCode: "MethodNotAllowed", Response: Method Not Allowed
+2025-08-26 16:21:38.747 +08:00 [ERR] Exception during API request: user-permissions
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: M. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 74
+2025-08-26 16:21:58.264 +08:00 [WRN] API request failed: user-permissions, StatusCode: "MethodNotAllowed", Response: Method Not Allowed
+2025-08-26 16:21:58.283 +08:00 [ERR] Exception during API request: user-permissions
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: M. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 74

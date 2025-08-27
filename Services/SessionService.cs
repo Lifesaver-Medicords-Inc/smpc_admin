@@ -50,6 +50,8 @@ namespace smpc_admin.Services
         // Check access by string code like "ADMIN POSITIONS", "USER PERMISSION"
         public static bool HasAccess(string accessCode)
         {
+
+     
             if (string.IsNullOrWhiteSpace(accessCode) || !CurrentPositionAccess.Any()) return false;
 
             return CurrentPositionAccess.Any(a =>

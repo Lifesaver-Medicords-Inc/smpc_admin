@@ -10,107 +10,130 @@ using System.Windows.Forms;
 using smpc_admin.Models;
 using smpc_admin.Services;
 using Serilog;
+using smpc_admin.Pages.Shared;
+
 namespace smpc_admin.Pages.AccessControls
 {
     public partial class UserDetailsCardDialogForm : Form
     {
-       public int Id { get; private set; }
-       public int PositionId { get; private set; }
-       private int NewPositionId { get; set; }
-       private PositionModel Position { get; set; }
-       private UserPermissionModel Permision { get; set; }
+        private int Id { get; }
+        private int PositionId { get; }
+        private int NewPositionId { get; set; }
+        private UserPermissionModel _permission;
+        private UserPermissionModel _newPermission;
+        private readonly UserModel _user;
+        public event Action<int> UpdateSuccess;
+
         public UserDetailsCardDialogForm(UserModel user)
         {
             InitializeComponent();
-            LoadPositions();
+            _user = user;
             Id = user.Id;
             PositionId = user.PositionId;
-            Permision = user.Permissions;
             NewPositionId = user.PositionId;
+            _permission = user.Permissions;
+            _newPermission = user.Permissions;
 
             UserNameTextLabel.Text = $"{user.FirstName} {user.LastName}";
-            UpdateBtn.Enabled = false;
+
+            LoadUserPermissionsAsync();
         }
 
-
-
-        private async void LoadPositions()
+        public async Task LoadPositionsAsync()
         {
             try
             {
+
+                LoaderIndicatorOverlay.ShowOverlay();
+
+
                 var res = await PositionService.GetAllPositionAsync();
 
-                if (res.Success)
+                if (res?.Success == true)
                 {
-                    var emptyOption = new PositionModel
+                    var positions = res.Data.Select(p => new PositionModel
                     {
-                        Id = -0,
-                        Name = "-- Select Position --"
-                    };
+                        Id = p.Id,
+                        Name = p.Name
+                    }).ToList();
 
-                    var positions = res.Data.Select(a => new PositionModel { Name = a.Name, Id = a.Id }).ToList();
-
-                    positions.Insert(0, emptyOption);
+                    positions.Insert(0, new PositionModel { Id = 0, Name = "-- Select Position --" });
 
                     PositionsComboBox.DataSource = positions;
                     PositionsComboBox.DisplayMember = "Name";
                     PositionsComboBox.ValueMember = "Id";
-
                     PositionsComboBox.SelectedValue = PositionId;
-                   
                 }
-
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
+                Console.WriteLine($"[ERROR] Loading positions: {ex.Message}");
+            }
+            finally
+            {
+                LoaderIndicatorOverlay.HideOverlay();
             }
         }
 
         private void PositionsComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedItem = PositionsComboBox.SelectedItem as PositionModel;
-
-            if (selectedItem.Id == PositionId) return;
-
-            UpdateBtn.Enabled = true;
-            NewPositionId = selectedItem.Id;
-
+            if (PositionsComboBox.SelectedItem is PositionModel selected && selected.Id != PositionId)
+            {
+                NewPositionId = selected.Id;
+            }
         }
 
-        private void UpdateBtn_Click(object sender, EventArgs e)
+        private async void UpdateBtn_Click(object sender, EventArgs e)
         {
-            UpdatePosition();
+            await UpdatePositionAsync();
+            await UpdatePermissionsAsync();
         }
 
-        private async void UpdatePosition()
+        private async void LoadUserPermissionsAsync()
         {
-
-            if (NewPositionId == PositionId) return;
             try
             {
-                var res = await UserWithPositionService.UpdateUserPositionAsync(Id, NewPositionId);
+                LoaderIndicatorOverlay.ShowOverlay();
 
-                if(res != null && res.Success)
+                var res = await UserService.GetUserPermissionAsync(_user.Id);
+
+                if (res?.Success == true && res.Data != null)
                 {
-                    Log.Information($"RES: {res.Data.Id}");
-                
-                }
-            }catch(Exception ex)
-            {
+                    _permission = res.Data;
+                    _newPermission = res.Data;
 
+                    CanCreateCheckBox.Checked = res.Data.CanCreate;
+                    CanUpdateCheckBox.Checked = res.Data.CanUpdate;
+                    CanDeleteCheckBox.Checked = res.Data.CanDelete;
+                }
+            }
+            catch (Exception ex)
+            {
+               
             }
             finally
             {
-
+                LoaderIndicatorOverlay.HideOverlay();
             }
         }
 
-        private async void UpdatePermissions()
+        private async Task UpdatePositionAsync()
         {
             try
             {
+                LoaderIndicatorOverlay.ShowOverlay();
 
+                var res = await UserWithPositionService.UpdateUserPositionAsync(new UserModel
+                {
+                    Id = Id,
+                    PositionId = NewPositionId
+                });
+
+                if (res?.Success == true)
+                {
+                    UpdateSuccess?.Invoke(PositionId);
+                }
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -118,8 +141,46 @@ namespace smpc_admin.Pages.AccessControls
             }
             finally
             {
-
+                LoaderIndicatorOverlay.HideOverlay();
             }
+        }
+
+        private async Task UpdatePermissionsAsync()
+        {
+            if (_permission == null || _newPermission == null || _permission.Equals(_newPermission))
+                return;
+
+            try
+            {
+                LoaderIndicatorOverlay.ShowOverlay();
+                await UserService.UpdateUserPermissionAsync(_newPermission);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] Updating permissions: {ex.Message}");
+            }
+            finally
+            {
+                LoaderIndicatorOverlay.HideOverlay();
+            }
+        }
+
+        private void CanCreateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_newPermission != null && sender is CheckBox cb)
+                _newPermission.CanCreate = cb.Checked;
+        }
+
+        private void CanUpdateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_newPermission != null && sender is CheckBox cb)
+                _newPermission.CanUpdate = cb.Checked;
+        }
+
+        private void CanDeleteCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_newPermission != null && sender is CheckBox cb)
+                _newPermission.CanDelete = cb.Checked;
         }
     }
 }

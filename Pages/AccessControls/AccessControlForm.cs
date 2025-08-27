@@ -30,7 +30,7 @@ namespace smpc_admin.Pages.AccessControls
 
         public void OnPositionChanged(PositionModel position)
         {
-            _positionUsersForm.LoadPositonUsers(position.Id);
+           _positionUsersForm.LoadPositionUsersAsync(position.Id);
         }
     }
 }

@@ -17,9 +17,9 @@ namespace smpc_admin.Services
 
         }
 
-        public static async Task<HttpResponseModel<PositionModel>> UpdateUserPositionAsync(int userId, int positionId)
+        public static async Task<HttpResponseModel<PositionModel>> UpdateUserPositionAsync(UserModel user)
         {
-            var res = await HttpClientHelper.Put<HttpResponseModel<PositionModel>>($"users/position/{userId}", new { Id = userId, PositionId = positionId} );
+            var res = await HttpClientHelper.Put<HttpResponseModel<PositionModel>>($"users/position/{user.Id}", user );
 
             return res;
 

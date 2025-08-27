@@ -16,10 +16,5 @@ namespace smpc_admin.Services
             return res;
         }
 
-        public async static Task<HttpResponseModel<UserModel>> LogOutAsync(Dictionary<string, dynamic> data)
-        {
-            var res = await HttpClientHelper.Post<HttpResponseModel<UserModel>>("logout", data);
-            return res;
-        }
     }
 }

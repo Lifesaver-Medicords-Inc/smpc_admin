@@ -43,6 +43,8 @@ namespace smpc_admin.Pages.AccessControls
             _parent = parent;
         }
 
+
+     
         private async void LoadPositions()
         {
             try
@@ -103,6 +105,7 @@ namespace smpc_admin.Pages.AccessControls
             {
 
                 var moduleRow = new CheckBoxAndLabelItem(item.Key, item.Key);
+                moduleRow.Width = ModulesFlowLayoutPanel.ClientSize.Width;
 
 
                 moduleRow.OnCheckedChanged += (s, isChecked) =>
@@ -151,6 +154,10 @@ namespace smpc_admin.Pages.AccessControls
 
                     // LoadPositionEmployees(position.Id);
                     var currentPositionAccess = position.Access;
+                    
+
+                    if(currentPositionAccess != null)
+                    {
 
                     //Mark check in modules
                     foreach (CheckBoxAndLabelItem item in ModulesFlowLayoutPanel.Controls.OfType<CheckBoxAndLabelItem>())
@@ -169,6 +176,9 @@ namespace smpc_admin.Pages.AccessControls
 
                     }
 
+                    }
+
+
                 }
                 else
                 {
@@ -182,7 +192,6 @@ namespace smpc_admin.Pages.AccessControls
 
             }
         }
-
 
         private void ModulesFlowLayoutPanel_Resize(object sender, EventArgs e)
         {

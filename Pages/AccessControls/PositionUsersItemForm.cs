@@ -30,11 +30,13 @@ namespace smpc_admin.Pages.AccessControls
         }
 
 
-        private void OnItemClick(object sender, EventArgs e)
+        private  void OnItemClick(object sender, EventArgs e)
         {
-           var userDetailsDialog = new UserDetailsCardDialogForm(User);
 
-            userDetailsDialog.ShowDialog();
+            var parent = new PositionUsersForm();
+
+            parent.ShowUserDetailsForm(User);
         }
+
     }
 }

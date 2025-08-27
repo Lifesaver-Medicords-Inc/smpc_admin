@@ -48,6 +48,10 @@ namespace smpc_admin.Pages.AccessControls
             // mainSplitContainer.Panel1
             // 
             this.mainSplitContainer.Panel1.Controls.Add(this.TopSplitContainer);
+            // 
+            // mainSplitContainer.Panel2
+            // 
+            this.mainSplitContainer.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.mainSplitContainer.Size = new System.Drawing.Size(1235, 906);
             this.mainSplitContainer.SplitterDistance = 409;
             this.mainSplitContainer.TabIndex = 0;
@@ -58,11 +62,15 @@ namespace smpc_admin.Pages.AccessControls
             this.TopSplitContainer.Location = new System.Drawing.Point(0, 0);
             this.TopSplitContainer.Name = "TopSplitContainer";
             // 
+            // TopSplitContainer.Panel1
+            // 
+            this.TopSplitContainer.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            // 
             // TopSplitContainer.Panel2
             // 
             this.TopSplitContainer.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.TopSplitContainer.Size = new System.Drawing.Size(1235, 409);
-            this.TopSplitContainer.SplitterDistance = 602;
+            this.TopSplitContainer.SplitterDistance = 541;
             this.TopSplitContainer.TabIndex = 0;
             // 
             // AccessControlForm
