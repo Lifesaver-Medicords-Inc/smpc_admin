@@ -74,8 +74,7 @@ namespace smpc_admin.Pages.AccessControls
             }
             catch (Exception ex)
             {
-                Log.Information(ex.Message);
-                Utils.Helpers.ShowDialogMessage("Error fetching positions");
+                Log.Error($"[ERROR] Loading positions: {ex.Message}");
             }
             finally
             {
@@ -234,7 +233,8 @@ namespace smpc_admin.Pages.AccessControls
             }
             catch (Exception ex)
             {
-
+                Log.Error($"[ERROR] Updating position access: {ex.Message}");
+             
             }
             finally
             {

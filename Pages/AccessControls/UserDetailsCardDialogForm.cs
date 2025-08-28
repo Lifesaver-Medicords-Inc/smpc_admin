@@ -67,7 +67,7 @@ namespace smpc_admin.Pages.AccessControls
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[ERROR] Loading positions: {ex.Message}");
+                Log.Error($"[ERROR] Loading positions: {ex.Message}");
             }
             finally
             {
@@ -109,7 +109,7 @@ namespace smpc_admin.Pages.AccessControls
             }
             catch (Exception ex)
             {
-               
+                Log.Error($"[ERROR] Load user permission: {ex.Message}");
             }
             finally
             {
@@ -131,13 +131,15 @@ namespace smpc_admin.Pages.AccessControls
 
                 if (res?.Success == true)
                 {
+               
+                    this.Close();
                     UpdateSuccess?.Invoke(PositionId);
                 }
-                this.Close();
+     
             }
             catch (Exception ex)
             {
-
+                Log.Error($"[ERROR] Updating position: {ex.Message}");
             }
             finally
             {
@@ -157,7 +159,7 @@ namespace smpc_admin.Pages.AccessControls
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[ERROR] Updating permissions: {ex.Message}");
+               Log.Error($"[ERROR] Updating permissions: {ex.Message}");
             }
             finally
             {

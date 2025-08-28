@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using smpc_admin.Services;
 using smpc_admin.Models;
 using smpc_admin.Pages.Shared;
+using Serilog;
 
 namespace smpc_admin.Pages.AccessControls
 {
@@ -24,12 +25,12 @@ namespace smpc_admin.Pages.AccessControls
         }
 
 
-        public async void LoadPositionUsersAsync(int positionId)
+        public async Task LoadPositionUsersAsync(int positionId)
         {
             try
             {
 
-                LoaderIndicatorOverlay.ShowOverlay();
+               LoaderIndicatorOverlay.ShowOverlay();
 
                 var res = await UserWithPositionService.GetAllUsersInPositionAsync(positionId);
 
@@ -48,17 +49,20 @@ namespace smpc_admin.Pages.AccessControls
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[ERROR] Loading users: {ex.Message}");
+                Log.Error($"[ERROR] Loading position users: {ex.Message}");
             }
             finally
             {
-                LoaderIndicatorOverlay.HideOverlay();
+             LoaderIndicatorOverlay.HideOverlay();
             }
         }
 
         public void LoadUsersList(List<UserModel> users)
         {
             UsersFlowLayoutPanel.Controls.Clear();
+            UsersFlowLayoutPanel.PerformLayout();
+            UsersFlowLayoutPanel.Invalidate();
+            UsersFlowLayoutPanel.Refresh();
 
             if (!users.Any())
                 return;
@@ -68,7 +72,6 @@ namespace smpc_admin.Pages.AccessControls
                 AddUser(user);
             }
 
-            UsersFlowLayoutPanel.Refresh();
         }
 
         public void AddUser(UserModel user)
@@ -77,6 +80,11 @@ namespace smpc_admin.Pages.AccessControls
             {
                 Width = UsersFlowLayoutPanel.ClientSize.Width,
                 Tag = user.Id
+            };
+
+            row.UserClicked += (s, u) =>
+            {
+                ShowUserDetailsForm(u);
             };
 
             UsersFlowLayoutPanel.Controls.Add(row);
@@ -94,13 +102,28 @@ namespace smpc_admin.Pages.AccessControls
         {
             var userDetailsDialog = new UserDetailsCardDialogForm(user);
 
-            userDetailsDialog.UpdateSuccess += (positionId) => {
-                this.LoadPositionUsersAsync(positionId);
+            userDetailsDialog.UpdateSuccess += async(positionId) => {
+                if (InvokeRequired)
+                {
+                    Invoke(new Action(async () =>
+                    {
+                        await LoadPositionUsersAsync(positionId);
+                    }));
+                }
+                else
+                {
+
+                    await LoadPositionUsersAsync(positionId);
+                    UsersFlowLayoutPanel.Refresh();
+                }
             };
 
             await userDetailsDialog.LoadPositionsAsync();
             userDetailsDialog.ShowDialog();
         }
+
+
+
     }
 
 }

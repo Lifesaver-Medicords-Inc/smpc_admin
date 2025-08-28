@@ -16,6 +16,8 @@ namespace smpc_admin.Pages.AccessControls
 
    
         public UserModel User { get; private set; }
+        public event EventHandler<UserModel> UserClicked;
+
         public PositionUsersItemForm(UserModel user, bool isActive = false)
         {
             InitializeComponent();
@@ -33,9 +35,7 @@ namespace smpc_admin.Pages.AccessControls
         private  void OnItemClick(object sender, EventArgs e)
         {
 
-            var parent = new PositionUsersForm();
-
-            parent.ShowUserDetailsForm(User);
+            UserClicked?.Invoke(this, User);
         }
 
     }

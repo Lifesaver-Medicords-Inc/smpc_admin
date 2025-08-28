@@ -28,9 +28,9 @@ namespace smpc_admin.Pages.AccessControls
             TopSplitContainer.Panel2.Controls.Add(_positionUsersForm);
         }
 
-        public void OnPositionChanged(PositionModel position)
+        public async void OnPositionChanged(PositionModel position)
         {
-           _positionUsersForm.LoadPositionUsersAsync(position.Id);
+          await _positionUsersForm.LoadPositionUsersAsync(position.Id);
         }
     }
 }
