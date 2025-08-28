@@ -40,5 +40,20 @@ namespace smpc_admin.Utils
         }
 
 
+
+        public static Control FindControlRecursive(Control parent, string name)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (ctrl.Name == name)
+                    return ctrl;
+
+                var found = FindControlRecursive(ctrl, name);
+                if (found != null)
+                    return found;
+            }
+
+            return null;
+        }
     }
 }

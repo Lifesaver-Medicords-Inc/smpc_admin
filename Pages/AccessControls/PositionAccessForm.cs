@@ -13,6 +13,8 @@ using smpc_admin.Pages.Shared;
 using smpc_admin.Services;
 using smpc_admin.Pages.AccessControls;
 using Serilog;
+using smpc_admin.Pages.Layout;
+using smpc_admin.Utils;
 
 namespace smpc_admin.Pages.AccessControls
 {
@@ -20,9 +22,9 @@ namespace smpc_admin.Pages.AccessControls
     {
 
         private ModulesAccessCodeModel viewAccessModules = new ModulesAccessCodeModel();
-        private List<PositionModel> _positions = new List<PositionModel>();
-        private PositionModel _selectedPosition;
+        public List<PositionModel> positions = new List<PositionModel>();
 
+        private PositionModel _selectedPosition;
         private UserControl _parent;
 
         public PositionAccessForm()
@@ -44,7 +46,6 @@ namespace smpc_admin.Pages.AccessControls
         }
 
 
-     
         private async void LoadPositions()
         {
             try
@@ -54,7 +55,7 @@ namespace smpc_admin.Pages.AccessControls
 
                 if (res.Success)
                 {
-                    _positions = res.Data;
+                    positions = res.Data;
 
 
                     var emptyOption = new PositionModel
@@ -63,11 +64,11 @@ namespace smpc_admin.Pages.AccessControls
                         Name = "-- Select Position --"
                     };
 
-                    var positions = res.Data.Select(a => new PositionModel { Name = a.Name, Id = a.Id }).ToList();
+                    var mapPositions = positions.Select(a => new PositionModel { Name = a.Name, Id = a.Id }).ToList();
 
-                    positions.Insert(0, emptyOption);
+                    mapPositions.Insert(0, emptyOption);
 
-                    PositionsComboBox.DataSource = positions;
+                    PositionsComboBox.DataSource = mapPositions;
                     PositionsComboBox.DisplayMember = "Name";
                     PositionsComboBox.ValueMember = "Id";
                 }
@@ -139,7 +140,7 @@ namespace smpc_admin.Pages.AccessControls
             if (PositionsComboBox.SelectedItem is PositionModel selected)
             {
 
-                var position = _positions.Where(p => p.Id == selected.Id).FirstOrDefault();
+                var position = positions.Where(p => p.Id == selected.Id).FirstOrDefault();
 
                 if (position != null)
                 {
@@ -185,6 +186,20 @@ namespace smpc_admin.Pages.AccessControls
                     foreach (CheckBoxAndLabelItem item in ModulesFlowLayoutPanel.Controls.OfType<CheckBoxAndLabelItem>())
                     {
                         item.IsChecked = false;
+                    }
+
+                    //Remove users in list
+                    var parent = this.FindForm() as MainLayoutForm;
+
+                    if (parent != null)
+                    {
+                        var control = Utils.Helpers.FindControlRecursive(parent, "PositionUsersForm");
+
+                        if (control is PositionUsersForm userList)
+                        {
+                            userList.RemoveUsers();
+                        }
+   
                     }
 
                 }

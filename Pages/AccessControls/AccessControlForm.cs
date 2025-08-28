@@ -15,13 +15,14 @@ namespace smpc_admin.Pages.AccessControls
     public partial class AccessControlForm : UserControl
     {
         private PositionUsersForm _positionUsersForm;
+        private PositionAccessForm _positionAccessForm;
         public AccessControlForm()
         {
             InitializeComponent();
-            var positionAccessForm = new PositionAccessForm();
-            positionAccessForm.Host(this);
-            positionAccessForm.Dock = DockStyle.Fill; 
-            TopSplitContainer.Panel1.Controls.Add(positionAccessForm);
+            _positionAccessForm = new PositionAccessForm();
+            _positionAccessForm.Host(this);
+            _positionAccessForm.Dock = DockStyle.Fill; 
+            TopSplitContainer.Panel1.Controls.Add(_positionAccessForm);
 
             _positionUsersForm = new PositionUsersForm();
             _positionUsersForm.Dock = DockStyle.Fill;

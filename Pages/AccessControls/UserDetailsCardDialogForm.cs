@@ -11,6 +11,7 @@ using smpc_admin.Models;
 using smpc_admin.Services;
 using Serilog;
 using smpc_admin.Pages.Shared;
+using smpc_admin.Pages.Layout;
 
 namespace smpc_admin.Pages.AccessControls
 {
@@ -23,8 +24,9 @@ namespace smpc_admin.Pages.AccessControls
         private UserPermissionModel _newPermission;
         private readonly UserModel _user;
         public event Action<int> UpdateSuccess;
+        private readonly PositionAccessForm _positionAccessForm;
 
-        public UserDetailsCardDialogForm(UserModel user)
+        public UserDetailsCardDialogForm(UserModel user, PositionAccessForm positionAccessForm)
         {
             InitializeComponent();
             _user = user;
@@ -37,42 +39,35 @@ namespace smpc_admin.Pages.AccessControls
             UserNameTextLabel.Text = $"{user.FirstName} {user.LastName}";
 
             LoadUserPermissionsAsync();
+            _positionAccessForm = positionAccessForm;
+            LoadPositionsAsync();
         }
 
-        public async Task LoadPositionsAsync()
+
+        private Control FindControlRecursive(Control parent, string name)
         {
-            try
+            foreach (Control ctrl in parent.Controls)
             {
+                if (ctrl.Name == name)
+                    return ctrl;
 
-                LoaderIndicatorOverlay.ShowOverlay();
-
-
-                var res = await PositionService.GetAllPositionAsync();
-
-                if (res?.Success == true)
-                {
-                    var positions = res.Data.Select(p => new PositionModel
-                    {
-                        Id = p.Id,
-                        Name = p.Name
-                    }).ToList();
-
-                    positions.Insert(0, new PositionModel { Id = 0, Name = "-- Select Position --" });
-
-                    PositionsComboBox.DataSource = positions;
-                    PositionsComboBox.DisplayMember = "Name";
-                    PositionsComboBox.ValueMember = "Id";
-                    PositionsComboBox.SelectedValue = PositionId;
-                }
+                var found = FindControlRecursive(ctrl, name);
+                if (found != null)
+                    return found;
             }
-            catch (Exception ex)
-            {
-                Log.Error($"[ERROR] Loading positions: {ex.Message}");
-            }
-            finally
-            {
-                LoaderIndicatorOverlay.HideOverlay();
-            }
+
+            return null;
+        }
+
+        public void  LoadPositionsAsync()
+        {
+            var positions = _positionAccessForm.positions;
+            positions.Insert(0, new PositionModel { Id = 0, Name = "-- Select Position --" });
+
+            PositionsComboBox.DataSource = positions;
+            PositionsComboBox.DisplayMember = "Name";
+            PositionsComboBox.ValueMember = "Id";
+            PositionsComboBox.SelectedValue = PositionId;
         }
 
         private void PositionsComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -133,7 +128,7 @@ namespace smpc_admin.Pages.AccessControls
                 {
                
                     this.Close();
-                    UpdateSuccess?.Invoke(PositionId);
+                    UpdateSuccess?.Invoke(_user.Id);
                 }
      
             }

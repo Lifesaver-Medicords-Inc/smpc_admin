@@ -17,13 +17,22 @@ namespace smpc_admin.Pages.AccessControls
     public partial class PositionUsersForm : UserControl
     {
 
+        private List<UserModel> _users;
+        private List<PositionModel> _positions;
+        private PositionAccessForm _positionAccessForm;
     
         public PositionUsersForm()
         {
             InitializeComponent();
             UsersFlowLayoutPanel.Resize += UsersFlowLayoutPanel_Resize;
+            _positionAccessForm = new PositionAccessForm();
         }
 
+
+        public void SetPositions(List<PositionModel> positions)
+        {
+            _positions = positions;
+        }
 
         public async Task LoadPositionUsersAsync(int positionId)
         {
@@ -36,7 +45,7 @@ namespace smpc_admin.Pages.AccessControls
 
                 if (res?.Success == true)
                 {
-                   var users = res.Data
+                  _users = res.Data
                         .Select(u => new UserModel
                         {
                             Id = u.Id,
@@ -44,12 +53,17 @@ namespace smpc_admin.Pages.AccessControls
                             LastName = u.LastName,
                             PositionId = u.PositionId
                         }).ToList();
-                    LoadUsersList(users);
+                    LoadUsersList(_users);
+                }
+                else
+                {
+                    RemoveUsers();
                 }
             }
             catch (Exception ex)
             {
                 Log.Error($"[ERROR] Loading position users: {ex.Message}");
+                RemoveUsers();
             }
             finally
             {
@@ -90,6 +104,19 @@ namespace smpc_admin.Pages.AccessControls
             UsersFlowLayoutPanel.Controls.Add(row);
         }
  
+        public void RemoveUser(int id)
+        {
+            _users = _users.Where(u => u.Id != id).ToList();
+            LoadUsersList(_users);
+        }
+
+        public void RemoveUsers()
+        {
+            _users = new List<UserModel>();
+            UsersFlowLayoutPanel.Controls.Clear();
+
+        }
+
         private void UsersFlowLayoutPanel_Resize(object sender, EventArgs e)
         {
             foreach (Control ctrl in UsersFlowLayoutPanel.Controls)
@@ -98,27 +125,11 @@ namespace smpc_admin.Pages.AccessControls
             }
         }
 
-        public async void ShowUserDetailsForm(UserModel user)
+        public  void ShowUserDetailsForm(UserModel user)
         {
-            var userDetailsDialog = new UserDetailsCardDialogForm(user);
+            var userDetailsDialog = new UserDetailsCardDialogForm(user, _positionAccessForm);
 
-            userDetailsDialog.UpdateSuccess += async(positionId) => {
-                if (InvokeRequired)
-                {
-                    Invoke(new Action(async () =>
-                    {
-                        await LoadPositionUsersAsync(positionId);
-                    }));
-                }
-                else
-                {
-
-                    await LoadPositionUsersAsync(positionId);
-                    UsersFlowLayoutPanel.Refresh();
-                }
-            };
-
-            await userDetailsDialog.LoadPositionsAsync();
+            userDetailsDialog.UpdateSuccess += (id) => { RemoveUser(id); };
             userDetailsDialog.ShowDialog();
         }
 
