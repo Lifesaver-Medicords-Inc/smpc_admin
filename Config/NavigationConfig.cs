@@ -1,8 +1,10 @@
-﻿using System;
+﻿using smpc_admin.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace smpc_admin.Config
 {
@@ -23,6 +25,7 @@ namespace smpc_admin.Config
                         Code = "ADMIN ACCESS CONTROL",
                         Text = "Access Control",
                         IsParent = false,
+
                     },
                     new NavigationItem
                     {
@@ -86,6 +89,57 @@ namespace smpc_admin.Config
             }
 
             return list;
+        }
+
+
+        public static void PopulateNavigationTree(TreeNodeCollection targetNodes,
+                 IEnumerable<NavigationItem> navigationItems,
+                    TreeNode parentNode = null)
+        {
+            foreach (var item in navigationItems)
+            {
+                if (!SessionService.HasAccess(item.Code))
+                    continue;
+
+                var currentNode = new TreeNode(item.Text)
+                {
+                    Name = item.Code
+                };
+
+                // Recurse into children
+                PopulateNavigationTree(currentNode.Nodes, item.Children, currentNode);
+
+                if (parentNode != null)
+                {
+                    parentNode.Nodes.Add(currentNode);
+                }
+                else
+                {
+                    targetNodes.Add(currentNode);
+                }
+            }
+        }
+
+        private TreeNode CreateNodeWithChildren(NavigationItem item)
+        {
+            if (!SessionService.HasAccess(item.Code))
+                return null;
+
+            var node = new TreeNode(item.Text)
+            {
+                Name = item.Code
+            };
+
+            foreach (var child in item.Children)
+            {
+                var childNode = CreateNodeWithChildren(child);
+                if (childNode != null)
+                {
+                    node.Nodes.Add(childNode);
+                }
+            }
+
+            return node;
         }
     }
 }

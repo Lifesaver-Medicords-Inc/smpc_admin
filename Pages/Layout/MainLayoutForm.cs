@@ -36,46 +36,15 @@ namespace smpc_admin.Pages.Layout
 
         private void PopulateNavigationTreeView()
         {
+            NavigationBarTreeView.BeginUpdate();
             NavigationBarTreeView.Nodes.Clear();
 
-            foreach (var item in NavigationConfig.Items)
-            {
-                if (!SessionService.HasAccess(item.Code)) continue;
-
-                TreeNode parentNode = new TreeNode(item.Text)
-                {
-                    Name = item.Code
-                };
-
-                foreach (var child in item.Children)
-                {
-                  if (!SessionService.HasAccess(child.Code)) continue;
-
-                    TreeNode childNode = new TreeNode(child.Text)
-                    {
-                        Name = child.Code
-                    };
-
-                    // If child has sub-children
-                    foreach (var grandchild in child.Children)
-                    {
-                        if (!SessionService.HasAccess(grandchild.Code)) continue;
-
-                        var grandchildNode = new TreeNode(grandchild.Text)
-                        {
-                            Name = grandchild.Code 
-                        };
-                        childNode.Nodes.Add(grandchildNode);
-                    }
-                    parentNode.Nodes.Add(childNode);
-                }
-
-                NavigationBarTreeView.Nodes.Add(parentNode);
-            }
+            NavigationConfig.PopulateNavigationTree(NavigationBarTreeView.Nodes, NavigationConfig.Items);
 
             NavigationBarTreeView.ExpandAll();
-
+            NavigationBarTreeView.EndUpdate();
         }
+
 
 
         public void showForm(string tabTitle, Control control)
