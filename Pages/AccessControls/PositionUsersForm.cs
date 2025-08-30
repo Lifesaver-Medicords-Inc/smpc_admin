@@ -39,8 +39,6 @@ namespace smpc_admin.Pages.AccessControls
             try
             {
 
-               LoaderIndicatorOverlay.ShowOverlay();
-
                 var res = await UserWithPositionService.GetAllUsersInPositionAsync(positionId);
 
                 if (res?.Success == true)
@@ -64,10 +62,6 @@ namespace smpc_admin.Pages.AccessControls
             {
                 Log.Error($"[ERROR] Loading position users: {ex.Message}");
                 RemoveUsers();
-            }
-            finally
-            {
-             LoaderIndicatorOverlay.HideOverlay();
             }
         }
 

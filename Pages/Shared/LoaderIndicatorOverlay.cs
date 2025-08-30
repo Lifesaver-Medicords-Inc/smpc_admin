@@ -63,7 +63,6 @@ namespace smpc_admin.Pages.Shared
 
             if (parentForm == null)
             {
-                MessageBox.Show("MainLayoutForm is not open.");
                 return;
             }
 

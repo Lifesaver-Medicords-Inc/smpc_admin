@@ -50,7 +50,6 @@ namespace smpc_admin.Pages.AccessControls
         {
             try
             {
-                LoaderIndicatorOverlay.ShowOverlay();
                 var res = await PositionService.GetAllPositionAsync();
 
                 if (res.Success)
@@ -79,7 +78,6 @@ namespace smpc_admin.Pages.AccessControls
             }
             finally
             {
-                LoaderIndicatorOverlay.HideOverlay();
                 LoadModulesAccess();
             }
         }
@@ -222,8 +220,6 @@ namespace smpc_admin.Pages.AccessControls
 
                 if (_selectedPosition == null) return;
 
-                LoaderIndicatorOverlay.ShowOverlay();
-
                 var access = new List<PositionAccessModel>();
 
                 foreach (var a in viewAccessModules.Codes)
@@ -250,10 +246,6 @@ namespace smpc_admin.Pages.AccessControls
             {
                 Log.Error($"[ERROR] Updating position access: {ex.Message}");
              
-            }
-            finally
-            {
-                LoaderIndicatorOverlay.HideOverlay();
             }
         }
     }

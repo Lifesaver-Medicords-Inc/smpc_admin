@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using smpc_admin.Pages.Shared;
 
 namespace smpc_admin.Utils
 {
@@ -30,6 +31,7 @@ namespace smpc_admin.Utils
         {
             try
             {
+                LoaderIndicatorOverlay.ShowOverlay();
                 HttpContent content = null;
 
                 if (!string.IsNullOrEmpty(body) && method != HttpMethod.Get)
@@ -78,6 +80,10 @@ namespace smpc_admin.Utils
             {
                 Log.Error(ex, "Exception during API request: {Url}", url);
                 return default;
+            }
+            finally
+            {
+                LoaderIndicatorOverlay.HideOverlay();
             }
         }
 

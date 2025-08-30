@@ -16,9 +16,9 @@ namespace smpc_admin.Models
         public string Name { get; set; }
 
         [JsonProperty("access")]
-        public ICollection<PositionAccessModel> Access { get; set; }
+        public ICollection<PositionAccessModel> Access { get; set; } = new List<PositionAccessModel>();
 
         [JsonProperty("users")]
-        public ICollection<UserModel> Users { get; set; }
+        public ICollection<UserModel> Users { get; set; } = new List<UserModel>();
     }
 }
