@@ -20,13 +20,18 @@ namespace smpc_admin.Models
 
         [JsonProperty("last_name")]
         public string LastName { get; set; }
+        [JsonProperty("password")]
+        public string Password { get; set; }
 
-
-       [JsonProperty("position_id")]
+        [JsonProperty("position_id")]
         public int PositionId { set; get; }
+        [JsonProperty("department")]
+        public string Department { set; get; }
 
         [JsonProperty("permissions")]
         public UserPermissionModel Permissions { get; set; }
+        [JsonProperty("position")]
+        public PositionModel Position { get; set; }
 
     }
 }

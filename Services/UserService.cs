@@ -10,21 +10,53 @@ namespace smpc_admin.Services
 {
     class UserService
     {
-        public static async Task<HttpResponseModel<UserPermissionModel>> CreateUserPermissionAsync(UserPermissionModel permissions)
+
+        public static async Task<HttpResponse<UserModel>> CreateUserAsync(UserModel user)
         {
-            var res = await HttpClientHelper.Post<HttpResponseModel<UserPermissionModel>>("user-permissions", permissions);
+            var res = await HttpClientHelper.Post<HttpResponse<UserModel>>("users", user);
+            return res;
+        
+        }
+
+        public static async Task<HttpResponse<UserModel>> GetUserAsync(int id)
+        {
+            var res = await HttpClientHelper.Get<HttpResponse<UserModel>>($"users/{id}");
+            return res;
+        }
+
+        public static async Task<HttpResponse<IEnumerable<UserModel>>> GetUsersAsync()
+        {
+            var res = await HttpClientHelper.Get<HttpResponse<IEnumerable<UserModel>>>($"users");
+            return res;
+        }
+
+        public static async Task<HttpResponse<UserModel>> UpdateUserAsync(UserModel user)
+        {
+            var res = await HttpClientHelper.Put<HttpResponse<UserModel>>($"users/{user.Id}", user);
+            return res;
+        }
+
+        public static async Task<HttpResponse<UserModel>> DeleteUserAsync(int id)
+        {
+            var res = await HttpClientHelper.Delete<HttpResponse<UserModel>>($"users/{id}");
+            return res;
+        }
+
+        public static async Task<HttpResponse<UserPermissionModel>> CreateUserPermissionAsync(UserPermissionModel permissions)
+        {
+            var res = await HttpClientHelper.Post<HttpResponse<UserPermissionModel>>("permissions", permissions);
             return res;
           
         }
-        public static async Task<HttpResponseModel<UserPermissionModel>> GetUserPermissionAsync(int id)
+        public static async Task<HttpResponse<UserPermissionModel>> GetUserPermissionAsync(int id)
         {
-            var res = await HttpClientHelper.Get<HttpResponseModel<UserPermissionModel>>($"user-permissions/{id}");
+            var res = await HttpClientHelper.Get<HttpResponse<UserPermissionModel>>($"user-permissions/{id}");
             return res;
 
         }
-        public static async Task<HttpResponseModel<UserPermissionModel>> UpdateUserPermissionAsync(UserPermissionModel permissions)
+        public static async Task<HttpResponse<UserPermissionModel>> UpdatePermissionAsync(UserPermissionModel permissions)
         {
-            var res = await HttpClientHelper.Put<HttpResponseModel<UserPermissionModel>>($"user-permissions/{permissions.Id}", permissions);
+            var res = await HttpClientHelper.Put<HttpResponse<UserPermissionModel>>($"permissions/{permissions.Id}", permissions);
             return res;
         }
     }

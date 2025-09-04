@@ -133,40 +133,28 @@
     <Compile Include="Config\NavigationConfig.cs" />
     <Compile Include="Config\NavigationItem.cs" />
     <Compile Include="Logging\LoggerConfig.cs" />
-    <Compile Include="Models\HttpResponseModel.cs" />
+    <Compile Include="Models\HttpResponse.cs" />
     <Compile Include="Models\PositionAccessModel.cs" />
     <Compile Include="Models\PositionModel.cs" />
     <Compile Include="Models\UserPermissionModel.cs" />
     <Compile Include="Models\UserModel.cs" />
-    <Compile Include="Pages\AccessControls\AccessControlForm.cs">
+    <Compile Include="Pages\AccessControls\AccessControlView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\AccessControls\AccessControlForm.Designer.cs">
-      <DependentUpon>AccessControlForm.cs</DependentUpon>
+    <Compile Include="Pages\AccessControls\AccessControlView.Designer.cs">
+      <DependentUpon>AccessControlView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AccessControls\CheckBoxAndLabelItem.cs">
+    <Compile Include="Pages\AccessControls\PositionAccess.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\AccessControls\CheckBoxAndLabelItem.Designer.cs">
-      <DependentUpon>CheckBoxAndLabelItem.cs</DependentUpon>
+    <Compile Include="Pages\AccessControls\PositionAccess.Designer.cs">
+      <DependentUpon>PositionAccess.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AccessControls\PositionAccessForm.cs">
+    <Compile Include="Pages\AccessControls\PositionUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\AccessControls\PositionAccessForm.Designer.cs">
-      <DependentUpon>PositionAccessForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AccessControls\PositionUsersForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pages\AccessControls\PositionUsersForm.Designer.cs">
-      <DependentUpon>PositionUsersForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AccessControls\PositionUsersItemForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pages\AccessControls\PositionUsersItemForm.Designer.cs">
-      <DependentUpon>PositionUsersItemForm.cs</DependentUpon>
+    <Compile Include="Pages\AccessControls\PositionUsers.Designer.cs">
+      <DependentUpon>PositionUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\AccessControls\UserDetailsCardDialogForm.cs">
       <SubType>Form</SubType>
@@ -186,12 +174,6 @@
     <Compile Include="Pages\Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Positions\PositionsForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pages\Positions\PositionsForm.Designer.cs">
-      <DependentUpon>PositionsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Shared\LoaderIndicatorOverlay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -203,6 +185,24 @@
     </Compile>
     <Compile Include="Pages\Shared\RedBoxForm.Designer.cs">
       <DependentUpon>RedBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Users\CreateUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Users\CreateUserForm.Designer.cs">
+      <DependentUpon>CreateUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Users\UserDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Users\UserDetailsForm.Designer.cs">
+      <DependentUpon>UserDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Users\UsersView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Users\UsersView.Designer.cs">
+      <DependentUpon>UsersView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -218,23 +218,18 @@
     <Compile Include="Services\SessionService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\UserWithPositionService.cs" />
+    <Compile Include="Utils\Departments.cs" />
     <Compile Include="Utils\Helpers.cs" />
     <Compile Include="Utils\HttpClientHelper.cs" />
     <Compile Include="ViewModels\ModulesAccessCodeModel.cs" />
-    <EmbeddedResource Include="Pages\AccessControls\AccessControlForm.resx">
-      <DependentUpon>AccessControlForm.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\AccessControls\AccessControlView.resx">
+      <DependentUpon>AccessControlView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\AccessControls\CheckBoxAndLabelItem.resx">
-      <DependentUpon>CheckBoxAndLabelItem.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\AccessControls\PositionAccess.resx">
+      <DependentUpon>PositionAccess.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\AccessControls\PositionAccessForm.resx">
-      <DependentUpon>PositionAccessForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\AccessControls\PositionUsersForm.resx">
-      <DependentUpon>PositionUsersForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\AccessControls\PositionUsersItemForm.resx">
-      <DependentUpon>PositionUsersItemForm.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\AccessControls\PositionUsers.resx">
+      <DependentUpon>PositionUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\AccessControls\UserDetailsCardDialogForm.resx">
       <DependentUpon>UserDetailsCardDialogForm.cs</DependentUpon>
@@ -245,14 +240,20 @@
     <EmbeddedResource Include="Pages\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Positions\PositionsForm.resx">
-      <DependentUpon>PositionsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Shared\LoaderIndicatorOverlay.resx">
       <DependentUpon>LoaderIndicatorOverlay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Shared\RedBoxForm.resx">
       <DependentUpon>RedBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Users\CreateUserForm.resx">
+      <DependentUpon>CreateUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Users\UserDetailsForm.resx">
+      <DependentUpon>UserDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Users\UsersView.resx">
+      <DependentUpon>UsersView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

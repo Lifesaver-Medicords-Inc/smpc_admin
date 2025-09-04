@@ -22,22 +22,21 @@ namespace smpc_admin.Config
                 {
                     new NavigationItem
                     {
+                        Code = "ADMIN USERS",
+                        Text = "Users",
+                        IsParent = false
+                    },
+                    new NavigationItem
+                    {
                         Code = "ADMIN ACCESS CONTROL",
                         Text = "Access Control",
                         IsParent = false,
 
                     },
-                    new NavigationItem
-                    {
-                        Code = "ADMIN POSITIONS",
-                        Text = "Positions",
-                        IsParent = false
-                    },
                 }
             }
         };
 
-        // ✅ Get all codes
         public static List<string> GetAllCodes(List<NavigationItem> items)
         {
             var codes = new List<string>();
@@ -55,7 +54,6 @@ namespace smpc_admin.Config
             return codes;
         }
 
-        // ✅ Get all texts
         public static List<string> GetAllTexts(List<NavigationItem> items)
         {
             var texts = new List<string>();
@@ -141,5 +139,49 @@ namespace smpc_admin.Config
 
             return node;
         }
+
+        public class ModuleItem
+        {
+            public string Code { get; set; }
+            public string Text { get; set; }
+
+            public override string ToString()
+            {
+                return Text; // Only show this in CheckedListBox
+            }
+        }
+
+        public static List<ModuleItem> GetAllItemsKeyValue(List<NavigationItem> items)
+        {
+            var result = new List<ModuleItem>();
+            var seenCodes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            void Traverse(List<NavigationItem> navItems)
+            {
+                foreach (var item in navItems)
+                {
+                    // Only add if not already added
+                    if (!string.IsNullOrWhiteSpace(item.Code) && seenCodes.Add(item.Code))
+                    {
+                        result.Add(new ModuleItem
+                        {
+                            Code = item.Code,
+                            Text = item.Text
+                        });
+                    }
+
+                    if (item.Children != null && item.Children.Any())
+                    {
+                        Traverse(item.Children);
+                    }
+                }
+            }
+
+            Traverse(items);
+
+            return result;
+        }
+
+
     }
 }

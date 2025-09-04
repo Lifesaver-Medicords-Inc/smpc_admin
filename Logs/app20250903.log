@@ -1,0 +1,47 @@
+2025-09-03 10:37:47.755 +08:00 [WRN] API request failed: users, StatusCode: "MethodNotAllowed", Response: Method Not Allowed
+2025-09-03 10:37:47.824 +08:00 [ERR] Exception during API request: users
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: M. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-03 14:01:07.888 +08:00 [WRN] API request failed: users, StatusCode: "InternalServerError", Response: {"message":"failed creating user","success":false}
+2025-09-03 14:01:14.150 +08:00 [WRN] API request failed: users, StatusCode: "InternalServerError", Response: {"message":"failed creating user","success":false}
+2025-09-03 14:16:44.381 +08:00 [WRN] API request failed: permissions, StatusCode: "InternalServerError", Response: {"message":"failed creating user permission","success":false}
+2025-09-03 14:19:10.226 +08:00 [WRN] API request failed: users, StatusCode: "InternalServerError", Response: {"message":"failed creating user","success":false}
+2025-09-03 14:19:17.388 +08:00 [WRN] API request failed: permissions, StatusCode: "InternalServerError", Response: {"message":"failed creating user permission","success":false}
+2025-09-03 14:22:23.501 +08:00 [WRN] API request failed: permissions, StatusCode: "InternalServerError", Response: {"message":"failed creating user permissionnat","success":false}
+2025-09-03 14:35:35.251 +08:00 [WRN] API request failed: users, StatusCode: "InternalServerError", Response: {"message":"failed creating user","success":false}
+2025-09-03 14:36:02.165 +08:00 [WRN] API request failed: users, StatusCode: "InternalServerError", Response: {"message":"failed creating user","success":false}
+2025-09-03 14:36:12.489 +08:00 [WRN] API request failed: users, StatusCode: "InternalServerError", Response: {"message":"failed creating user","success":false}
+2025-09-03 14:36:53.155 +08:00 [WRN] API request failed: users, StatusCode: "InternalServerError", Response: {"message":"failed creating user","success":false}
+2025-09-03 14:38:14.162 +08:00 [WRN] API request failed: users, StatusCode: "InternalServerError", Response: {"message":"failed creating user","success":false}
+2025-09-03 14:40:44.250 +08:00 [WRN] API request failed: users, StatusCode: "InternalServerError", Response: {"message":"failed creating user","success":false}
+2025-09-03 14:45:50.299 +08:00 [WRN] API request failed: permissions, StatusCode: "InternalServerError", Response: {"message":"failed creating user permissionnat","success":false}
+2025-09-03 14:49:43.854 +08:00 [WRN] API request failed: permissions, StatusCode: "InternalServerError", Response: {"message":"failed creating user permissionnat","success":false}
+2025-09-03 16:11:43.371 +08:00 [WRN] API request failed: users/49, StatusCode: "BadRequest", Response: {"message":"cannot bind request","success":false}
+2025-09-03 16:12:39.471 +08:00 [WRN] API request failed: users/49, StatusCode: "MethodNotAllowed", Response: Method Not Allowed
+2025-09-03 16:12:39.701 +08:00 [ERR] Exception during API request: users/49
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: M. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-03 16:19:53.779 +08:00 [WRN] API request failed: permissions, StatusCode: "InternalServerError", Response: {"message":"duplicate record error","success":false}
+2025-09-03 16:20:03.021 +08:00 [WRN] API request failed: users/49, StatusCode: "BadRequest", Response: {"message":"cannot bind request","success":false}
+2025-09-03 16:21:49.827 +08:00 [WRN] API request failed: permissions/20, StatusCode: "InternalServerError", Response: {"message":"failed creating user permissionat","success":false}
+2025-09-03 16:22:26.990 +08:00 [WRN] API request failed: permissions/20, StatusCode: "InternalServerError", Response: {"message":"failed creating user permissionat","success":false}
+2025-09-03 16:29:15.966 +08:00 [WRN] API request failed: users/49, StatusCode: "BadRequest", Response: {"message":"cannot bind request","success":false}
+2025-09-03 16:52:26.029 +08:00 [WRN] API request failed: permissions, StatusCode: "InternalServerError", Response: {"message":"failed creating user permission","success":false}
+2025-09-03 16:53:28.832 +08:00 [WRN] API request failed: permissions, StatusCode: "InternalServerError", Response: {"message":"failed creating user permission","success":false}
+2025-09-03 16:59:02.779 +08:00 [WRN] API request failed: permissions, StatusCode: "InternalServerError", Response: {"message":"failed creating user permission","success":false}

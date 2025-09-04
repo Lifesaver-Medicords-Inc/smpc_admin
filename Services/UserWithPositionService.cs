@@ -10,16 +10,16 @@ namespace smpc_admin.Services
 {
     class UserWithPositionService
     {
-        public static async Task<HttpResponseModel<IEnumerable<UserModel>>> GetAllUsersInPositionAsync(int id)
+        public static async Task<HttpResponse<IEnumerable<UserModel>>> GetAllUsersInPositionAsync(int id)
         {
-            var res = await HttpClientHelper.Get<HttpResponseModel<IEnumerable<UserModel>>>($"users/with-position/{id}");
+            var res = await HttpClientHelper.Get<HttpResponse<IEnumerable<UserModel>>>($"users/with-position/{id}");
             return res;
 
         }
 
-        public static async Task<HttpResponseModel<PositionModel>> UpdateUserPositionAsync(UserModel user)
+        public static async Task<HttpResponse<PositionModel>> UpdateUserPositionAsync(UserModel user)
         {
-            var res = await HttpClientHelper.Put<HttpResponseModel<PositionModel>>($"users/position/{user.Id}", user );
+            var res = await HttpClientHelper.Put<HttpResponse<PositionModel>>($"users/position/{user.Id}", user );
 
             return res;
 

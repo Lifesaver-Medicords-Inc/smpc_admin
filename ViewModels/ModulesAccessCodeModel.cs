@@ -45,7 +45,10 @@ namespace smpc_admin.ViewModels
             }
         }
 
-
+        public void Clear()
+        {
+            _codes = new List<string>();
+        }
         public string CodesString => string.Join(", ", _codes);
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -11,27 +11,27 @@ namespace smpc_admin.Services
 {
     class PositionService
     {
-        public async static Task<HttpResponseModel<PositionModel>> CreatePositionAsync(PositionModel position)
+        public async static Task<HttpResponse<PositionModel>> CreatePositionAsync(PositionModel position)
         {
 
-            var res = await HttpClientHelper.Post<HttpResponseModel<PositionModel>>("positions", position);
+            var res = await HttpClientHelper.Post<HttpResponse<PositionModel>>("positions", position);
 
             return res;
 
         }
 
-        public static async Task<HttpResponseModel<List<PositionModel>>> GetAllPositionAsync()
+        public static async Task<HttpResponse<List<PositionModel>>> GetAllPositionAsync()
         {
 
-            var res = await HttpClientHelper.Get<HttpResponseModel<List<PositionModel>>>($"positions");
+            var res = await HttpClientHelper.Get<HttpResponse<List<PositionModel>>>($"positions");
 
             return res;
         }
 
-        public static async Task<HttpResponseModel<PositionModel>> GetPositionAsync(int positionId)
+        public static async Task<HttpResponse<PositionModel>> GetPositionAsync(int positionId)
         {
 
-            var res = await HttpClientHelper.Get<HttpResponseModel<PositionModel>>($"positions/{positionId}");
+            var res = await HttpClientHelper.Get<HttpResponse<PositionModel>>($"positions/{positionId}");
 
             return res;
         }

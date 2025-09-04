@@ -53,10 +53,11 @@ namespace smpc_admin.Pages.Shared
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pictureBox);
-            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.ForeColor = System.Drawing.Color.Transparent;
             this.Name = "LoaderIndicatorOverlay";
             this.Size = new System.Drawing.Size(601, 654);
+            this.UseWaitCursor = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 

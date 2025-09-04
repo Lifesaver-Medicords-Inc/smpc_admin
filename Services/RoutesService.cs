@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using smpc_admin.Pages.AccessControls;
-using smpc_admin.Pages.Positions;
+using smpc_admin.Pages.Users;
 
 
 
@@ -17,8 +17,8 @@ namespace smpc_admin.Services
         Dictionary<string, Control> _pages = new Dictionary<string, Control>()
         {
 
-            {"ADMIN ACCESS CONTROL", new AccessControlForm()},
-            {"ADMIN POSITIONS", new PositionsForm()  },
+            {"ADMIN ACCESS CONTROL", new AccessControlView()},
+            {"ADMIN USERS", new UsersView()}
  
 
         };

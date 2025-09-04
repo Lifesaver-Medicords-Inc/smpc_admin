@@ -10,9 +10,9 @@ namespace smpc_admin.Services
 {
     class AuthService
     {
-        public async static Task<HttpResponseModel<UserModel>> LoginAsync(Dictionary<string,dynamic> data)
+        public async static Task<HttpResponse<UserModel>> LoginAsync(Dictionary<string,dynamic> data)
         {
-            var res = await HttpClientHelper.Post<HttpResponseModel<UserModel>>("login", data);
+            var res = await HttpClientHelper.Post<HttpResponse<UserModel>>("login", data);
             return res;
         }
 
