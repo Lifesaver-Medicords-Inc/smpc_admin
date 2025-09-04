@@ -17,32 +17,37 @@ namespace smpc_admin.Pages.AccessControls
 {
     public partial class UserDetailsCardDialogForm : Form
     {
-        private int _id { get; }
-        private int _positionId { get; }
-        private int _newPositionId { get; set; }
         private UserPermissionModel _permission;
-        private UserPermissionModel _newPermission;
         private readonly UserModel _user;
         public event Action<int> UpdateSuccess;
-        private readonly PositionAccessForm _positionAccessForm;
-        private readonly List<PositionModel> _positions;
-        public UserDetailsCardDialogForm(UserModel user, PositionAccessForm positionAccessForm)
+
+  
+        private int _newPositionId = 0;
+        public UserDetailsCardDialogForm(UserModel user, PositionAccess positionAccessForm)
         {
             InitializeComponent();
             _user = user;
-            _id = user.Id;
-            _positionId = user.PositionId;
-            _newPositionId = user.PositionId;
             _permission = user.Permissions;
-            _newPermission = user.Permissions;
+
+            if(_permission != null)
+            {
+                 CanCreateCheckBox.Checked = _permission.CanCreate;
+                 CanUpdateCheckBox.Checked = _permission.CanUpdate;
+                 CanDeleteCheckBox.Checked = _permission.CanDelete;
+            }
 
             UserNameTextLabel.Text = $"{user.FirstName} {user.LastName}";
 
-            LoadUserPermissionsAsync();
-            _positionAccessForm = positionAccessForm;
-            _positions = _positionAccessForm.positions;
+            PositionsComboBox.DataSource = positionAccessForm.positions;
+            PositionsComboBox.DisplayMember = "Name";
+            PositionsComboBox.ValueMember = "Id";
 
-            LoadPositionsAsync();
+            int index = positionAccessForm.positions.FindIndex(p => p.Id == _user.PositionId);
+            if (index != -1)
+            {
+                PositionsComboBox.SelectedIndex = index;
+            }
+
         }
 
 
@@ -61,17 +66,10 @@ namespace smpc_admin.Pages.AccessControls
             return null;
         }
 
-        public void  LoadPositionsAsync()
-        {
-            PositionsComboBox.DataSource =_positions;
-            PositionsComboBox.DisplayMember = "Name";
-            PositionsComboBox.ValueMember = "Id";
-            PositionsComboBox.SelectedValue = _positionId;
-        }
 
         private void PositionsComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (PositionsComboBox.SelectedItem is PositionModel selected && selected.Id != _positionId)
+            if (PositionsComboBox.SelectedItem is PositionModel selected)
             {
                 _newPositionId = selected.Id;
             }
@@ -83,46 +81,23 @@ namespace smpc_admin.Pages.AccessControls
             await UpdatePermissionsAsync();
         }
 
-        private async void LoadUserPermissionsAsync()
-        {
-            try
-            {
-              
-
-                var res = await UserService.GetUserPermissionAsync(_user.Id);
-
-                if (res?.Success == true && res.Data != null)
-                {
-                    _permission = res.Data;
-                    _newPermission = res.Data;
-
-                    CanCreateCheckBox.Checked = res.Data.CanCreate;
-                    CanUpdateCheckBox.Checked = res.Data.CanUpdate;
-                    CanDeleteCheckBox.Checked = res.Data.CanDelete;
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error($"[ERROR] Load user permission: {ex.Message}");
-            }
-            
-        }
-
         private async Task UpdatePositionAsync()
         {
             try
             {
-                if (_positionId == _newPositionId) return;
+
+                if (_user.PositionId == _newPositionId || _newPositionId < 1) return;
 
                 var res = await UserWithPositionService.UpdateUserPositionAsync(new UserModel
                 {
-                    Id = _id,
+                    Id = _user.Id,
                     PositionId = _newPositionId
                 });
 
-                if (res?.Success == true)
-                {
                
+
+                if (res != null && res.Success)
+                {
                     this.Close();
                     UpdateSuccess?.Invoke(_user.Id);
                 }
@@ -138,12 +113,12 @@ namespace smpc_admin.Pages.AccessControls
         private async Task UpdatePermissionsAsync()
         {
 
-            if (_permission == null || _newPermission == null)
+            if (_permission == null)
                 return;
 
             try
             {
-                await UserService.UpdateUserPermissionAsync(_newPermission);
+                await UserService.UpdatePermissionAsync(_permission);
             }
             catch (Exception ex)
             {
@@ -154,20 +129,20 @@ namespace smpc_admin.Pages.AccessControls
 
         private void CanCreateCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (_newPermission != null && sender is CheckBox cb)
-                _newPermission.CanCreate = cb.Checked;
+            if (_permission != null && sender is CheckBox cb)
+                _permission.CanCreate = cb.Checked;
         }
 
         private void CanUpdateCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (_newPermission != null && sender is CheckBox cb)
-                _newPermission.CanUpdate = cb.Checked;
+            if (_permission != null && sender is CheckBox cb)
+                _permission.CanUpdate = cb.Checked;
         }
 
         private void CanDeleteCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (_newPermission != null && sender is CheckBox cb)
-                _newPermission.CanDelete = cb.Checked;
+            if (_permission != null && sender is CheckBox cb)
+                _permission.CanDelete = cb.Checked;
         }
     }
 }

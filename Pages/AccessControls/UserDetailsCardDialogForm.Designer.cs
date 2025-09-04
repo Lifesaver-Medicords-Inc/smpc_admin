@@ -75,13 +75,13 @@ namespace smpc_admin.Pages.AccessControls
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.UpdateBtn.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.UpdateBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.UpdateBtn.Location = new System.Drawing.Point(721, 127);
+            this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.UpdateBtn.Location = new System.Drawing.Point(721, 133);
             this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Size = new System.Drawing.Size(127, 36);
+            this.UpdateBtn.Size = new System.Drawing.Size(127, 30);
             this.UpdateBtn.TabIndex = 1;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -109,7 +109,7 @@ namespace smpc_admin.Pages.AccessControls
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(844, 123);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(844, 129);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // UserNameTextLabel
@@ -118,7 +118,7 @@ namespace smpc_admin.Pages.AccessControls
             this.UserNameTextLabel.AutoSize = true;
             this.UserNameTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserNameTextLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.UserNameTextLabel.Location = new System.Drawing.Point(140, 12);
+            this.UserNameTextLabel.Location = new System.Drawing.Point(140, 13);
             this.UserNameTextLabel.Name = "UserNameTextLabel";
             this.UserNameTextLabel.Size = new System.Drawing.Size(85, 17);
             this.UserNameTextLabel.TabIndex = 3;
@@ -130,7 +130,7 @@ namespace smpc_admin.Pages.AccessControls
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.userNameLabel.Location = new System.Drawing.Point(3, 12);
+            this.userNameLabel.Location = new System.Drawing.Point(3, 13);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(98, 17);
             this.userNameLabel.TabIndex = 0;
@@ -142,7 +142,7 @@ namespace smpc_admin.Pages.AccessControls
             this.positionLabel.AutoSize = true;
             this.positionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.positionLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.positionLabel.Location = new System.Drawing.Point(3, 53);
+            this.positionLabel.Location = new System.Drawing.Point(3, 56);
             this.positionLabel.Name = "positionLabel";
             this.positionLabel.Size = new System.Drawing.Size(86, 17);
             this.positionLabel.TabIndex = 1;
@@ -154,7 +154,7 @@ namespace smpc_admin.Pages.AccessControls
             this.permissionsLabel.AutoSize = true;
             this.permissionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.permissionsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.permissionsLabel.Location = new System.Drawing.Point(3, 94);
+            this.permissionsLabel.Location = new System.Drawing.Point(3, 99);
             this.permissionsLabel.Name = "permissionsLabel";
             this.permissionsLabel.Size = new System.Drawing.Size(117, 17);
             this.permissionsLabel.TabIndex = 2;
@@ -165,7 +165,7 @@ namespace smpc_admin.Pages.AccessControls
             this.PositionsComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PositionsComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PositionsComboBox.FormattingEnabled = true;
-            this.PositionsComboBox.Location = new System.Drawing.Point(140, 44);
+            this.PositionsComboBox.Location = new System.Drawing.Point(140, 46);
             this.PositionsComboBox.Name = "PositionsComboBox";
             this.PositionsComboBox.Size = new System.Drawing.Size(701, 28);
             this.PositionsComboBox.TabIndex = 4;
@@ -177,9 +177,9 @@ namespace smpc_admin.Pages.AccessControls
             this.panel1.Controls.Add(this.CanUpdateCheckBox);
             this.panel1.Controls.Add(this.CanCreateCheckBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(140, 85);
+            this.panel1.Location = new System.Drawing.Point(140, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(701, 35);
+            this.panel1.Size = new System.Drawing.Size(701, 37);
             this.panel1.TabIndex = 5;
             // 
             // CanDeleteCheckBox
@@ -227,8 +227,9 @@ namespace smpc_admin.Pages.AccessControls
             this.Controls.Add(this.splitContainer1);
             this.Name = "UserDetailsCardDialogForm";
             this.Padding = new System.Windows.Forms.Padding(12);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "User Details";
+            this.Text = "User Access";
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
