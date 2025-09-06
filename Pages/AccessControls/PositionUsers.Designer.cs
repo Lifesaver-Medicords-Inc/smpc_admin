@@ -71,15 +71,19 @@ namespace smpc_admin.Pages.AccessControls
             // 
             // UsersDataGridView
             // 
+            this.UsersDataGridView.AllowUserToAddRows = false;
+            this.UsersDataGridView.AllowUserToDeleteRows = false;
+            this.UsersDataGridView.AllowUserToResizeRows = false;
             this.UsersDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsersDataGridView.ColumnHeadersVisible = false;
             this.UsersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UsersDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.UsersDataGridView.MultiSelect = false;
             this.UsersDataGridView.Name = "UsersDataGridView";
             this.UsersDataGridView.ReadOnly = true;
             this.UsersDataGridView.RowHeadersVisible = false;
-            this.UsersDataGridView.ShowEditingIcon = false;
+            this.UsersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.UsersDataGridView.Size = new System.Drawing.Size(743, 595);
             this.UsersDataGridView.TabIndex = 0;
             // 

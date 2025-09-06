@@ -20,6 +20,13 @@ namespace smpc_admin.Config
                 IsParent = true,
                 Children = new List<NavigationItem>
                 {
+                      new NavigationItem
+                    {
+                        Code = "ADMIN ACCESS CONTROL",
+                        Text = "Access Control",
+                        IsParent = false,
+
+                    },
                     new NavigationItem
                     {
                         Code = "ADMIN USERS",
@@ -28,8 +35,8 @@ namespace smpc_admin.Config
                     },
                     new NavigationItem
                     {
-                        Code = "ADMIN ACCESS CONTROL",
-                        Text = "Access Control",
+                        Code = "ADMIN VEHICLES",
+                        Text = "Vehicles",
                         IsParent = false,
 
                     },

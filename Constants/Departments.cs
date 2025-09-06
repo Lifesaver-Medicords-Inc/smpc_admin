@@ -9,6 +9,6 @@ namespace smpc_admin.Utils
 {
     public static class Departments
     {
-        public static List<string> List = new List<string> { "Admin", "Sales" };
+        public static List<string> List = new List<string> { "Admin", "HR", "Sales", "Engineering", "Purchasing", "Dispatch", "Warehouse", "Accounting" };
     }
 }

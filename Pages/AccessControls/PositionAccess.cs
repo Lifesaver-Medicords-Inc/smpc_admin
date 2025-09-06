@@ -23,7 +23,8 @@ namespace smpc_admin.Pages.AccessControls
     public partial class PositionAccess : UserControl
     {
 
-        private ModulesAccessCodeModel viewAccessModules = new ModulesAccessCodeModel();
+        private List<string> _positionCurrentAccess = new List<string>();
+        private ModulesAccessCodeModel _viewAccessModules = new ModulesAccessCodeModel();
         public List<PositionModel> positions = new List<PositionModel>();
 
         private PositionModel _selectedPosition;
@@ -38,6 +39,8 @@ namespace smpc_admin.Pages.AccessControls
             PositionsComboBox.SelectedIndexChanged += PositionComboBox_SelectedItem;
             ModulesCheckedListBox.ItemCheck += ModulesCheckedListBox_ItemCheck;
 
+            SaveBtn.Enabled = false;
+
         }
 
 
@@ -51,7 +54,7 @@ namespace smpc_admin.Pages.AccessControls
         {
             try
             {
-                
+
                 var res = await PositionService.GetAllPositionAsync();
 
                 if (res != null && res.Success)
@@ -86,7 +89,7 @@ namespace smpc_admin.Pages.AccessControls
 
         private void PositionAccessForm_Load(object sender, EventArgs e)
         {
-            ModulesTextBox.DataBindings.Add("Text", viewAccessModules, "CodesString");
+            ModulesTextBox.DataBindings.Add("Text", _viewAccessModules, "CodesString");
         }
 
         private void LoadModulesAccess()
@@ -112,14 +115,15 @@ namespace smpc_admin.Pages.AccessControls
             {
                 if (e.NewValue == CheckState.Checked)
                 {
-                    viewAccessModules.AddCode(item.Code);
+                    _viewAccessModules.AddCode(item.Code);
                 }
                 else
                 {
-                    viewAccessModules.RemoveCode(item.Code);
+                    _viewAccessModules.RemoveCode(item.Code);
                 }
             }
-            ModulesTextBox.Text = viewAccessModules.CodesString;
+            ModulesTextBox.Text = _viewAccessModules.CodesString;
+            AllowChangesSaveBtn();
         }
         private void CheckModules(List<string> selectedCodes)
         {
@@ -136,6 +140,20 @@ namespace smpc_admin.Pages.AccessControls
         }
 
 
+        private bool IsAccessMatch()
+        {
+            bool areEqual = _positionCurrentAccess.Count == _viewAccessModules.Codes.Count &&
+                !_positionCurrentAccess.Except(_viewAccessModules.Codes).Any() && !_viewAccessModules.Codes.Except(_positionCurrentAccess).Any();
+
+            return areEqual;
+        }
+
+        private void AllowChangesSaveBtn()
+        {
+
+            SaveBtn.Enabled = !IsAccessMatch();
+        }
+
         private void PositionComboBox_SelectedItem(object sender, EventArgs e)
         {
             if (!PositionsComboBox.Focused) return;
@@ -145,11 +163,13 @@ namespace smpc_admin.Pages.AccessControls
             if (PositionsComboBox.SelectedItem is PositionModel selected)
             {
                 var position = positions.FirstOrDefault(p => p.Id == selected.Id);
+
                 if (position != null)
                 {
                     _selectedPosition = position;
 
-              
+                    _positionCurrentAccess = position.Access.Select(a => a.Code).ToList();
+
                     if (_parent is AccessControlView parent)
                     {
                         parent.OnPositionChanged(position);
@@ -166,12 +186,15 @@ namespace smpc_admin.Pages.AccessControls
                     var currentPositionAccess = position.Access;
                     if (currentPositionAccess != null && currentPositionAccess.Any())
                     {
-                        var accessCodes = currentPositionAccess.Select(a => a.Code).ToList();
+
+                       var accessCodes = currentPositionAccess.Select(a => a.Code).ToList();
+                
+
                         CheckModules(accessCodes);
 
                         foreach (var code in accessCodes)
                         {
-                            viewAccessModules.AddCode(code);
+                            _viewAccessModules.AddCode(code);
                         }
                     }
                 }
@@ -193,6 +216,7 @@ namespace smpc_admin.Pages.AccessControls
                         }
                     }
                 }
+
             }
         }
 
@@ -214,7 +238,7 @@ namespace smpc_admin.Pages.AccessControls
 
                 var access = new List<PositionAccessModel>();
 
-                foreach (var a in viewAccessModules.Codes)
+                foreach (var a in _viewAccessModules.Codes)
                 {
                     access.Add(new PositionAccessModel
                     {

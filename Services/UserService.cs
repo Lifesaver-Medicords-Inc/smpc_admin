@@ -24,9 +24,19 @@ namespace smpc_admin.Services
             return res;
         }
 
-        public static async Task<HttpResponse<IEnumerable<UserModel>>> GetUsersAsync()
+        public static async Task<HttpResponse<IEnumerable<UserModel>>> GetUsersAsync(int? id = null, string firstName = null, string lastName = null, string department = null)
         {
-            var res = await HttpClientHelper.Get<HttpResponse<IEnumerable<UserModel>>>($"users");
+
+            var queryParams = new List<string>();
+            if (id.HasValue) queryParams.Add($"id={id.Value}");
+            if (!string.IsNullOrWhiteSpace(firstName)) queryParams.Add($"first-name={Uri.EscapeDataString(firstName)}");
+            if (!string.IsNullOrWhiteSpace(lastName)) queryParams.Add($"last-name={Uri.EscapeDataString(lastName)}");
+            if (!string.IsNullOrWhiteSpace(department)) queryParams.Add($"department={Uri.EscapeDataString(department)}");
+
+            string queryString = queryParams.Count > 0 ? "?" + string.Join("&", queryParams) : "";
+
+
+            var res = await HttpClientHelper.Get<HttpResponse<IEnumerable<UserModel>>>($"users{queryString}");
             return res;
         }
 

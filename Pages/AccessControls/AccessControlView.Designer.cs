@@ -55,8 +55,9 @@ namespace smpc_admin.Pages.AccessControls
             // AccessViewSplitContainer.Panel2
             // 
             this.AccessViewSplitContainer.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AccessViewSplitContainer.Size = new System.Drawing.Size(1227, 898);
-            this.AccessViewSplitContainer.SplitterDistance = 404;
+            this.AccessViewSplitContainer.Size = new System.Drawing.Size(722, 626);
+            this.AccessViewSplitContainer.SplitterDistance = 280;
+            this.AccessViewSplitContainer.SplitterWidth = 1;
             this.AccessViewSplitContainer.TabIndex = 0;
             // 
             // TopSplitContainer
@@ -71,8 +72,8 @@ namespace smpc_admin.Pages.AccessControls
             // TopSplitContainer.Panel1
             // 
             this.TopSplitContainer.Panel1.Controls.Add(this.label1);
-            this.TopSplitContainer.Size = new System.Drawing.Size(1227, 404);
-            this.TopSplitContainer.SplitterDistance = 28;
+            this.TopSplitContainer.Size = new System.Drawing.Size(722, 280);
+            this.TopSplitContainer.SplitterDistance = 40;
             this.TopSplitContainer.TabIndex = 0;
             // 
             // label1
@@ -93,7 +94,7 @@ namespace smpc_admin.Pages.AccessControls
             this.Controls.Add(this.AccessViewSplitContainer);
             this.Name = "AccessControlView";
             this.Padding = new System.Windows.Forms.Padding(4);
-            this.Size = new System.Drawing.Size(1235, 906);
+            this.Size = new System.Drawing.Size(730, 634);
             this.AccessViewSplitContainer.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AccessViewSplitContainer)).EndInit();
             this.AccessViewSplitContainer.ResumeLayout(false);

@@ -20,10 +20,17 @@ namespace smpc_admin.Services
 
         }
 
-        public static async Task<HttpResponse<List<PositionModel>>> GetAllPositionAsync()
+        public static async Task<HttpResponse<List<PositionModel>>> GetAllPositionAsync(int? id = null, string name = null, string code = null)
         {
 
-            var res = await HttpClientHelper.Get<HttpResponse<List<PositionModel>>>($"positions");
+            var queryParams = new List<string>();
+            if (id.HasValue) queryParams.Add($"id={id.Value}");
+            if (!string.IsNullOrWhiteSpace(name)) queryParams.Add($"name={Uri.EscapeDataString(name)}");
+            if (!string.IsNullOrWhiteSpace(code)) queryParams.Add($"code={Uri.EscapeDataString(code)}");
+
+            string queryString = queryParams.Count > 0 ? "?" + string.Join("&", queryParams) : "";
+
+            var res = await HttpClientHelper.Get<HttpResponse<List<PositionModel>>>($"positions{queryString}");
 
             return res;
         }

@@ -26,15 +26,6 @@ namespace smpc_admin.Pages.AccessControls
             InitializeComponent();
             _positionAccessForm = new PositionAccess();
 
-            UsersDataGridView.Columns.Clear();
-
-            UsersDataGridView.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "UserName",
-                HeaderText = "", // No header
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-            });
-
             UsersDataGridView.CellDoubleClick += UsersDataGridView_CellDoubleClick;
         }
 
@@ -53,15 +44,7 @@ namespace smpc_admin.Pages.AccessControls
 
                 if (res != null && res.Success)
                 {
-                  _users = res.Data
-                        .Select(u => new UserModel
-                        {
-                            Id = u.Id,
-                            FirstName = u.FirstName,
-                            LastName = u.LastName,
-                            PositionId = u.PositionId,
-                            Permissions = u.Permissions
-                        }).ToList();
+                  _users = res.Data.ToList();
                     LoadUsersList(_users);
                 }
                 else
@@ -78,23 +61,40 @@ namespace smpc_admin.Pages.AccessControls
 
         public void LoadUsersList(List<UserModel> users)
         {
+            if (users == null || !users.Any()) return;
 
-            if (!users.Any())
-                return;
+            SetupGrid();
 
-            foreach (var user in users)
+
+            foreach(var user in users)
             {
                 AddUser(user);
             }
 
         }
 
-       
+
         public void AddUser(UserModel user)
         {
             int rowIndex = UsersDataGridView.Rows.Add($"{user.FirstName} {user.LastName}");
             UsersDataGridView.Rows[rowIndex].Tag = user; 
         }
+
+
+        public void SetupGrid()
+        {
+            UsersDataGridView.Rows.Clear();
+            UsersDataGridView.Columns.Clear();
+
+            UsersDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "UserName",
+                HeaderText = "", // no header
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+        }
+
+
 
         public void RemoveUser(int id)
         {

@@ -1,0 +1,9 @@
+2025-09-06 09:55:49.615 +08:00 [WRN] API request failed: vehicles/0, StatusCode: "NotFound", Response: {"message":"vehicle not found","success":false}
+2025-09-06 10:13:26.463 +08:00 [WRN] API request failed: vehicles/0, StatusCode: "NotFound", Response: {"message":"vehicle not found","success":false}
+2025-09-06 14:10:01.115 +08:00 [WRN] API request failed: warehouses, StatusCode: "NotFound", Response: {"message":"failed getting warehouse","success":false}
+2025-09-06 15:20:41.067 +08:00 [WRN] API request failed: positions/1, StatusCode: "InternalServerError", Response: {"message":"failed to start DB transaction","success":false}
+2025-09-06 15:20:56.097 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: {"message":"failed getting user permission","success":false}
+2025-09-06 15:21:29.258 +08:00 [WRN] API request failed: positions/1, StatusCode: "InternalServerError", Response: {"message":"failed to start DB transaction","success":false}
+2025-09-06 15:21:29.264 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: {"message":"failed getting user permission","success":false}
+2025-09-06 15:22:40.897 +08:00 [WRN] API request failed: positions/1, StatusCode: "InternalServerError", Response: {"message":"failed to start DB transaction","success":false}
+2025-09-06 15:22:40.901 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: {"message":"failed getting user permission","success":false}

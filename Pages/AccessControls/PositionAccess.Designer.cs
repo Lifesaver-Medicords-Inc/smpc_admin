@@ -36,8 +36,8 @@ namespace smpc_admin.Pages.AccessControls
             this.ModulesTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.Save = new System.Windows.Forms.Button();
             this.ModulesCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.SaveBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -149,24 +149,10 @@ namespace smpc_admin.Pages.AccessControls
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.Save);
+            this.splitContainer3.Panel2.Controls.Add(this.SaveBtn);
             this.splitContainer3.Size = new System.Drawing.Size(770, 784);
             this.splitContainer3.SplitterDistance = 750;
             this.splitContainer3.TabIndex = 0;
-            // 
-            // Save
-            // 
-            this.Save.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Save.Location = new System.Drawing.Point(679, 0);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(91, 30);
-            this.Save.TabIndex = 0;
-            this.Save.Text = "Save";
-            this.Save.UseVisualStyleBackColor = false;
-            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // ModulesCheckedListBox
             // 
@@ -180,6 +166,20 @@ namespace smpc_admin.Pages.AccessControls
             this.ModulesCheckedListBox.Name = "ModulesCheckedListBox";
             this.ModulesCheckedListBox.Size = new System.Drawing.Size(770, 750);
             this.ModulesCheckedListBox.TabIndex = 0;
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SaveBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SaveBtn.Location = new System.Drawing.Point(679, 0);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(91, 30);
+            this.SaveBtn.TabIndex = 0;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.Save_Click);
             // 
             // PositionAccess
             // 
@@ -219,7 +219,7 @@ namespace smpc_admin.Pages.AccessControls
         private System.Windows.Forms.TextBox ModulesTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.CheckedListBox ModulesCheckedListBox;
     }
 }

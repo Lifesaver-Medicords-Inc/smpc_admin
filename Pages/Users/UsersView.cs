@@ -23,7 +23,7 @@ namespace smpc_admin.Pages.Users
             InitializeComponent();
             LoadUsers();
             LoadPositions();
-            UsersDataGridView.CellClick += UsersDataGridView_CellClick;
+            UsersDataGridView.CellDoubleClick += UsersDataGridView_CellDoubleClick;
 
         }
 
@@ -72,14 +72,6 @@ namespace smpc_admin.Pages.Users
         private void PopulateGrid(List<UserModel> users)
         {
             UsersDataGridView.Rows.Clear();
-
-            UsersDataGridView.ColumnCount = 6;
-            UsersDataGridView.Columns[0].Name = "Employee ID";
-            UsersDataGridView.Columns[1].Name = "First Name";
-            UsersDataGridView.Columns[2].Name = "Last Name";
-            UsersDataGridView.Columns[3].Name = "Position";
-            UsersDataGridView.Columns[4].Name = "Department";
-            UsersDataGridView.Columns[5].Name = "Permissions";
 
             foreach (var user in users)
             {
@@ -131,7 +123,7 @@ namespace smpc_admin.Pages.Users
           
         }
 
-        private void UsersDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void UsersDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 return;

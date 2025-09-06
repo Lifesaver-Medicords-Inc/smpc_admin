@@ -42,6 +42,12 @@ namespace smpc_admin.Pages.Users
             this.UsersDataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.UsersViewSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Permissions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).BeginInit();
             this.SplitContainer.Panel1.SuspendLayout();
             this.SplitContainer.Panel2.SuspendLayout();
@@ -80,7 +86,7 @@ namespace smpc_admin.Pages.Users
             // SplitContainer.Panel2
             // 
             this.SplitContainer.Panel2.Controls.Add(this.UsersDataGridView);
-            this.SplitContainer.Size = new System.Drawing.Size(969, 832);
+            this.SplitContainer.Size = new System.Drawing.Size(969, 823);
             this.SplitContainer.SplitterDistance = 77;
             this.SplitContainer.SplitterWidth = 2;
             this.SplitContainer.TabIndex = 0;
@@ -196,25 +202,34 @@ namespace smpc_admin.Pages.Users
             this.UsersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.UsersDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.UsersDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.UsersDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.UsersDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UsersDataGridView.ColumnHeadersHeight = 40;
+            this.UsersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EmployeeId,
+            this.FirstName,
+            this.LastName,
+            this.Position,
+            this.Department,
+            this.Permissions});
             this.UsersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UsersDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.UsersDataGridView.MultiSelect = false;
             this.UsersDataGridView.Name = "UsersDataGridView";
             this.UsersDataGridView.ReadOnly = true;
             this.UsersDataGridView.RowHeadersVisible = false;
             this.UsersDataGridView.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(4);
-            this.UsersDataGridView.RowTemplate.Height = 25;
+            this.UsersDataGridView.RowTemplate.Height = 50;
             this.UsersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.UsersDataGridView.ShowEditingIcon = false;
-            this.UsersDataGridView.Size = new System.Drawing.Size(969, 753);
+            this.UsersDataGridView.Size = new System.Drawing.Size(969, 744);
             this.UsersDataGridView.TabIndex = 0;
             // 
             // label1
@@ -246,8 +261,50 @@ namespace smpc_admin.Pages.Users
             // 
             this.UsersViewSplitContainer.Panel2.Controls.Add(this.SplitContainer);
             this.UsersViewSplitContainer.Size = new System.Drawing.Size(969, 867);
-            this.UsersViewSplitContainer.SplitterDistance = 31;
+            this.UsersViewSplitContainer.SplitterDistance = 40;
             this.UsersViewSplitContainer.TabIndex = 1;
+            // 
+            // EmployeeId
+            // 
+            this.EmployeeId.DataPropertyName = "EmployeeId";
+            this.EmployeeId.HeaderText = "EMPLOYEE ID";
+            this.EmployeeId.Name = "EmployeeId";
+            this.EmployeeId.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            this.FirstName.DataPropertyName = "FirstName";
+            this.FirstName.HeaderText = "FIRST NAME";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            this.LastName.DataPropertyName = "LastName";
+            this.LastName.HeaderText = "LAST NAME";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            // 
+            // Position
+            // 
+            this.Position.DataPropertyName = "Position";
+            this.Position.HeaderText = "POSITION";
+            this.Position.Name = "Position";
+            this.Position.ReadOnly = true;
+            // 
+            // Department
+            // 
+            this.Department.DataPropertyName = "Department";
+            this.Department.HeaderText = "DEPARTMENT";
+            this.Department.Name = "Department";
+            this.Department.ReadOnly = true;
+            // 
+            // Permissions
+            // 
+            this.Permissions.DataPropertyName = "Permissions";
+            this.Permissions.HeaderText = "PERMISSIONS";
+            this.Permissions.Name = "Permissions";
+            this.Permissions.ReadOnly = true;
             // 
             // UsersView
             // 
@@ -297,5 +354,11 @@ namespace smpc_admin.Pages.Users
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer UsersViewSplitContainer;
         private System.Windows.Forms.DataGridView UsersDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Department;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Permissions;
     }
 }

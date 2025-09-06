@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using smpc_admin.Pages.AccessControls;
 using smpc_admin.Pages.Users;
+using smpc_admin.Pages.Vehicles;
 
 
 
@@ -18,7 +19,8 @@ namespace smpc_admin.Services
         {
 
             {"ADMIN ACCESS CONTROL", new AccessControlView()},
-            {"ADMIN USERS", new UsersView()}
+            {"ADMIN USERS", new UsersView()},
+            {"ADMIN VEHICLES", new VehiclesView() }
  
 
         };
