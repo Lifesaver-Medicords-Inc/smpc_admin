@@ -15,6 +15,7 @@ namespace smpc_admin.Services
             var res = await HttpClientHelper.Post<HttpResponse<VehicleModel>>("vehicles",vehicle);
             return res;
 
+        
         }
 
         public static async Task<HttpResponse<VehicleModel>> GetVehicleAsync(int id)

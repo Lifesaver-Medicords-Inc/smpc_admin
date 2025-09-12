@@ -40,14 +40,14 @@ namespace smpc_admin.Pages.Users
             this.panel2 = new System.Windows.Forms.Panel();
             this.NewUserBtn = new System.Windows.Forms.Button();
             this.UsersDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.UsersViewSplitContainer = new System.Windows.Forms.SplitContainer();
             this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Permissions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.UsersViewSplitContainer = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).BeginInit();
             this.SplitContainer.Panel1.SuspendLayout();
             this.SplitContainer.Panel2.SuspendLayout();
@@ -232,38 +232,6 @@ namespace smpc_admin.Pages.Users
             this.UsersDataGridView.Size = new System.Drawing.Size(969, 744);
             this.UsersDataGridView.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "USERS";
-            // 
-            // UsersViewSplitContainer
-            // 
-            this.UsersViewSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UsersViewSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.UsersViewSplitContainer.IsSplitterFixed = true;
-            this.UsersViewSplitContainer.Location = new System.Drawing.Point(4, 4);
-            this.UsersViewSplitContainer.Name = "UsersViewSplitContainer";
-            this.UsersViewSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // UsersViewSplitContainer.Panel1
-            // 
-            this.UsersViewSplitContainer.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.UsersViewSplitContainer.Panel1.Controls.Add(this.label1);
-            // 
-            // UsersViewSplitContainer.Panel2
-            // 
-            this.UsersViewSplitContainer.Panel2.Controls.Add(this.SplitContainer);
-            this.UsersViewSplitContainer.Size = new System.Drawing.Size(969, 867);
-            this.UsersViewSplitContainer.SplitterDistance = 40;
-            this.UsersViewSplitContainer.TabIndex = 1;
-            // 
             // EmployeeId
             // 
             this.EmployeeId.DataPropertyName = "EmployeeId";
@@ -305,6 +273,38 @@ namespace smpc_admin.Pages.Users
             this.Permissions.HeaderText = "PERMISSIONS";
             this.Permissions.Name = "Permissions";
             this.Permissions.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "USERS";
+            // 
+            // UsersViewSplitContainer
+            // 
+            this.UsersViewSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UsersViewSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.UsersViewSplitContainer.IsSplitterFixed = true;
+            this.UsersViewSplitContainer.Location = new System.Drawing.Point(4, 4);
+            this.UsersViewSplitContainer.Name = "UsersViewSplitContainer";
+            this.UsersViewSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // UsersViewSplitContainer.Panel1
+            // 
+            this.UsersViewSplitContainer.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.UsersViewSplitContainer.Panel1.Controls.Add(this.label1);
+            // 
+            // UsersViewSplitContainer.Panel2
+            // 
+            this.UsersViewSplitContainer.Panel2.Controls.Add(this.SplitContainer);
+            this.UsersViewSplitContainer.Size = new System.Drawing.Size(969, 867);
+            this.UsersViewSplitContainer.SplitterDistance = 40;
+            this.UsersViewSplitContainer.TabIndex = 1;
             // 
             // UsersView
             // 

@@ -147,4 +147,5 @@ D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.csproj.CoreCompileInputs.cache
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.csproj.CopyComplete
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.exe
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.pdb
+D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Vehicles.VehicleFilesDialogForm.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.csproj.AssemblyReference.cache

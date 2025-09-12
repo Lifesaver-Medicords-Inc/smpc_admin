@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace smpc_admin.Models
 {
-    class VehicleModel
+   public class VehicleModel
     {
         [JsonProperty("id")]
         public int Id { get; set; }
@@ -31,5 +31,8 @@ namespace smpc_admin.Models
         public string LastMaintenance { get; set; }
         [JsonProperty("notes")]
         public string Notes { get; set; }
+
+        [JsonProperty("files")]
+        public IEnumerable<VehicleFileModel> Files { get; set; } = new List<VehicleFileModel>();
     }
 }

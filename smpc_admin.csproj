@@ -135,6 +135,7 @@
     <Compile Include="Constants\VehicleStatusEnum.cs" />
     <Compile Include="Constants\VehicleTypesEnum.cs" />
     <Compile Include="Logging\LoggerConfig.cs" />
+    <Compile Include="Models\VehicleFileModel.cs" />
     <Compile Include="Models\HttpResponse.cs" />
     <Compile Include="Models\PositionAccessModel.cs" />
     <Compile Include="Models\PositionModel.cs" />
@@ -208,6 +209,12 @@
     <Compile Include="Pages\Users\UsersView.Designer.cs">
       <DependentUpon>UsersView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Vehicles\VehicleFilesDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Vehicles\VehicleFilesDialogForm.Designer.cs">
+      <DependentUpon>VehicleFilesDialogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Vehicles\VehiclesView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -222,6 +229,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\VehicleFileService.cs" />
     <Compile Include="Services\PositionAccessService.cs" />
     <Compile Include="Services\PositionService.cs" />
     <Compile Include="Services\RoutesService.cs" />
@@ -267,12 +275,14 @@
     <EmbeddedResource Include="Pages\Users\UsersView.resx">
       <DependentUpon>UsersView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Vehicles\VehicleFilesDialogForm.resx">
+      <DependentUpon>VehicleFilesDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Vehicles\VehiclesView.resx">
       <DependentUpon>VehiclesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="appsettings.Development.json" />
@@ -308,6 +318,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\spinner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\FolderIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\cloudupload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\folder_unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\icon_excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\icon_iamge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\icon_pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\icon_zip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\icon_doc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\folder_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Serilog.4.3.0\build\Serilog.targets" Condition="Exists('packages\Serilog.4.3.0\build\Serilog.targets')" />

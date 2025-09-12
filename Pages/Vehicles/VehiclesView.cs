@@ -11,16 +11,18 @@ using smpc_admin.Models;
 using smpc_admin.Services;
 using smpc_admin.Constants;
 using System.Globalization;
+using Serilog;
 
 
 namespace smpc_admin.Pages.Vehicles
 {
     public partial class VehiclesView : UserControl
     {
-
+        private List<VehicleModel> _originalVehicles = new List<VehicleModel>();
         private List<VehicleModel> _vehicles = new List<VehicleModel>();
         private Dictionary<int, VehicleModel> _updatedVehicles = new Dictionary<int, VehicleModel>();
         private Dictionary<int, VehicleModel> _addVehicles = new Dictionary<int, VehicleModel>();
+        private List<WarehouseModel> _warehouse = new List<WarehouseModel>();
         private int _selectedWareHouseId;
         public VehiclesView()
         {
@@ -49,6 +51,8 @@ namespace smpc_admin.Pages.Vehicles
             VehiclesDataGridView.CellFormatting += VehiclesDataGridView_CellFormatting;
 
             VehiclesDataGridView.DataError += VehiclesDataGridView_DataError;
+
+            VehiclesDataGridView.CellClick += VehiclesDataGridView_CellClick;
         }
 
 
@@ -61,6 +65,7 @@ namespace smpc_admin.Pages.Vehicles
                 if(res != null && res.Success)
                 {
                     var warehouses = res.Data;
+                    _warehouse = res.Data.ToList();
 
                     var emptyOption = new WarehouseModel
                     {
@@ -93,34 +98,32 @@ namespace smpc_admin.Pages.Vehicles
                 {
                    
                     _vehicles = res.Data.ToList();
-                    SetupVehiclesGrid();
+                    _originalVehicles = res.Data.ToList();
+                    LoadVehiclesGrid();
                 }
 
             }catch(Exception ex)
             {
                 Utils.Helpers.ShowDialogMessage($"Failed to get vehicles {ex.Message}");
                 _vehicles.Clear();
-                SetupVehiclesGrid();
+                LoadVehiclesGrid();
             }
         }
 
 
 
-        private void SetupVehiclesGrid()
+        private void LoadVehiclesGrid()
         {
-
             VehiclesDataGridView.DataSource = null;
-
+           
             var bindingList = new BindingList<VehicleModel>(_vehicles);
-
             VehiclesDataGridView.AutoGenerateColumns = false;
             VehiclesDataGridView.DataSource = bindingList;
 
-            //Type
-
+ 
             if (VehiclesDataGridView.Columns["Type"] is DataGridViewComboBoxColumn typeColumn)
             {
-                var allType = _vehicles
+                var allTypes = _vehicles
                     .Select(v => v.Type?.Trim())
                     .Where(t => !string.IsNullOrWhiteSpace(t))
                     .Select(t => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(t.ToLower()))
@@ -129,14 +132,12 @@ namespace smpc_admin.Pages.Vehicles
                     .Distinct()
                     .ToList();
 
-                typeColumn.DataSource = allType;
+                typeColumn.DataSource = allTypes;
                 typeColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton;
                 typeColumn.FlatStyle = FlatStyle.Flat;
             }
 
-
-
-            //Status
+            // === Status column ===
             if (VehiclesDataGridView.Columns["Status"] is DataGridViewComboBoxColumn statusColumn)
             {
                 var allStatuses = _vehicles
@@ -154,16 +155,37 @@ namespace smpc_admin.Pages.Vehicles
             }
 
 
+            if (VehiclesDataGridView.Columns["Warehouse"] is DataGridViewComboBoxColumn warehouseColumn)
+            {
+
+
+                var availableWarehouses = _warehouse
+               .Select(w => new
+               {
+                   w.Id,
+                   Name = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(w.Name.ToLower())
+               })
+               .ToList();
+
+                warehouseColumn.DataSource = availableWarehouses;
+                warehouseColumn.ValueMember = "Id";     
+                warehouseColumn.DisplayMember = "Name";
+                warehouseColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton;
+                warehouseColumn.FlatStyle = FlatStyle.Flat;
+            }
+
+
             foreach (DataGridViewColumn column in VehiclesDataGridView.Columns)
             {
-                // Set DataPropertyName same as the column Name if not set
                 if (string.IsNullOrEmpty(column.DataPropertyName))
                 {
                     column.DataPropertyName = column.Name;
                 }
             }
 
+            _originalVehicles = _vehicles;
         }
+
 
 
         private void VehiclesDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -175,6 +197,17 @@ namespace smpc_admin.Pages.Vehicles
                     e.Value = $"{capacity} kg";
                     e.FormattingApplied = true;
                 }
+            }
+
+
+            if (VehiclesDataGridView.Columns[e.ColumnIndex].Name == "Files" &&
+                e.RowIndex >= 0 )
+            {
+                Image original = Properties.Resources.folder_icon;
+                Image resized = new Bitmap(original, new Size(20, 20));
+
+                e.Value = resized;
+                e.FormattingApplied = true;
             }
         }
 
@@ -224,7 +257,8 @@ namespace smpc_admin.Pages.Vehicles
                 Status = row.Cells["Status"].Value?.ToString(),
                 LastMaintenance = row.Cells["LastMaintenance"].Value?.ToString(),
                 Notes = row.Cells["Notes"].Value?.ToString(),
-                Id = int.TryParse(row.Cells["Id"].Value?.ToString(), out int idVal) ? idVal : 0
+                Id = int.TryParse(row.Cells["Id"].Value?.ToString(), out int idVal) ? idVal : 0,
+                WarehouseId = int.TryParse(row.Cells["Warehouse"].Value?.ToString(), out int val) ? val : 0
             };
         }
 
@@ -285,6 +319,7 @@ namespace smpc_admin.Pages.Vehicles
                     var response = await VehiclesService.CreateVehicleAsync(vehicle.Value);
                     if (response != null && response.Success)
                     {
+                        Log.Information($"UPLOAD NEW: {response.Data.Id}");
                         return response.Data;
                     }
                     else
@@ -321,7 +356,8 @@ namespace smpc_admin.Pages.Vehicles
                     var response = await VehiclesService.UpdateVehicleAsync(vehicle.Value);
                     if (response != null && response.Success)
                     {
-                      return  response.Data;
+                        Log.Information($"UPLOAD UPDATE: {response.Data.Id}");
+                        return  response.Data;
                     }
                     else
                     {
@@ -348,6 +384,7 @@ namespace smpc_admin.Pages.Vehicles
         {
             try
             {
+
                 var updateDataRow = new List<VehicleModel>();
 
                 var uploadResult = await UploadNewVehicles();
@@ -362,29 +399,35 @@ namespace smpc_admin.Pages.Vehicles
 
                 if (updateResult != null && updateResult.Any())
                 {
-                    updateDataRow.AddRange(uploadResult);
+                    updateDataRow.AddRange(updateResult);
                 }
-
 
                 foreach (var row in updateDataRow)
                 {
-                    var exist = _vehicles.FirstOrDefault(v => v.Type == row.Type && v.WarehouseId == row.WarehouseId && v.Model == row.Model 
+                    var exist = _vehicles.FirstOrDefault(v => v.Type == row.Type && v.Model == row.Model
                     && v.Description == row.Description && v.PlateNo == row.PlateNo 
                     && v.AcquisitionYear == row.AcquisitionYear && v.Capacity == row.Capacity 
                     && v.Status == row.Status && v.LastMaintenance == row.LastMaintenance && v.Notes == row.Notes);
 
                     if (exist != null)
                     {
-                        exist.Id = row.Id;
-                        continue;
+   
+                        _vehicles.Remove(exist);
+
+                        if (_selectedWareHouseId > 0 && exist.WarehouseId != _selectedWareHouseId)
+                        {
+                            continue;
+                        }
                     }
+
+                    _vehicles.Add(row);
 
                 }
 
                 _addVehicles.Clear();
                 _updatedVehicles.Clear();
 
-                SetupVehiclesGrid();
+                LoadVehiclesGrid();
 
             }
             catch(Exception ex)
@@ -399,7 +442,8 @@ namespace smpc_admin.Pages.Vehicles
         {
             _addVehicles.Clear();
             _updatedVehicles.Clear();
-            SetupVehiclesGrid();
+            _vehicles = _originalVehicles;
+            LoadVehiclesGrid();
             SaveBtn.Enabled = false;
             CancelBtn.Enabled = false;
 
@@ -424,6 +468,30 @@ namespace smpc_admin.Pages.Vehicles
         {
            
             e.Cancel = true; // prevent the exception from showing the default dialog
+        }
+
+
+
+        private void VehiclesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+    
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            string columnName = VehiclesDataGridView.Columns[e.ColumnIndex].Name;
+            if (columnName == "Files")
+            {
+                var row = VehiclesDataGridView.Rows[e.RowIndex];
+                var vehicle = row.DataBoundItem as VehicleModel;
+
+                if(vehicle != null)
+                {
+                    var filesDialog =new VehicleFilesDialogForm(vehicle);
+                    filesDialog.ShowDialog();
+                }
+
+
+            }
         }
 
     }

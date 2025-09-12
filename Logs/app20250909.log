@@ -1,0 +1,524 @@
+2025-09-09 09:17:33.656 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 09:17:33.711 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 09:20:11.168 +08:00 [ERR] Exception during API request: positions
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 56
+2025-09-09 09:28:30.177 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 09:28:30.227 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 09:40:34.753 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 09:40:34.805 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 10:15:05.431 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 10:15:05.484 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 10:38:14.296 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 10:38:14.347 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 10:39:33.142 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 10:39:33.191 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 11:21:59.217 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 11:21:59.269 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 11:22:52.449 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 11:22:52.498 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 11:24:39.183 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 11:24:39.235 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 11:26:43.173 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 11:26:43.224 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 11:30:31.190 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 11:30:31.247 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 11:37:12.362 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 11:37:12.416 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 11:39:02.791 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 11:39:02.838 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 13:06:55.489 +08:00 [ERR] Exception during API request: login
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3000
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext& context)
+   at System.Net.Http.HttpClientHandler.GetRequestStreamCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 56
+2025-09-09 13:07:00.660 +08:00 [ERR] Exception during API request: login
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3000
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext& context)
+   at System.Net.Http.HttpClientHandler.GetRequestStreamCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 56
+2025-09-09 13:08:59.828 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 13:08:59.844 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 13:13:05.861 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 13:13:05.913 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 13:15:53.326 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 13:15:53.374 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 13:18:21.456 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 13:18:21.508 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 13:18:49.899 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 13:18:49.947 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 13:20:37.292 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 13:20:37.345 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 13:22:21.467 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 13:22:21.522 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 13:30:25.821 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 13:30:25.873 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 13:47:16.193 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 13:47:16.245 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 13:48:25.993 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 13:48:26.047 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 17:31:35.379 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 17:31:35.458 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 17:34:14.845 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 17:34:14.896 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 17:34:31.673 +08:00 [WRN] API request failed: vehicle-files, StatusCode: "RequestEntityTooLarge", Response: Request Entity Too Large
+2025-09-09 17:34:31.701 +08:00 [ERR] Exception during API request: vehicle-files
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<PostMultipartAsync>d__8`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 128
+2025-09-09 17:36:41.989 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 17:36:42.044 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 17:36:51.212 +08:00 [WRN] API request failed: vehicle-files, StatusCode: "RequestEntityTooLarge", Response: Request Entity Too Large
+2025-09-09 17:36:51.232 +08:00 [ERR] Exception during API request: vehicle-files
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<PostMultipartAsync>d__8`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 128
+2025-09-09 17:37:08.689 +08:00 [WRN] API request failed: vehicle-files, StatusCode: "RequestEntityTooLarge", Response: Request Entity Too Large
+2025-09-09 17:37:08.705 +08:00 [ERR] Exception during API request: vehicle-files
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<PostMultipartAsync>d__8`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 128
+2025-09-09 17:38:42.100 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 17:38:42.150 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 17:38:54.893 +08:00 [WRN] API request failed: vehicle-files, StatusCode: "RequestEntityTooLarge", Response: Request Entity Too Large
+2025-09-09 17:38:54.911 +08:00 [ERR] Exception during API request: vehicle-files
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<PostMultipartAsync>d__8`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 128
+2025-09-09 17:39:33.861 +08:00 [WRN] API request failed: vehicle-files, StatusCode: "RequestEntityTooLarge", Response: Request Entity Too Large
+2025-09-09 17:39:33.876 +08:00 [ERR] Exception during API request: vehicle-files
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<PostMultipartAsync>d__8`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 128
+2025-09-09 17:40:36.318 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 17:40:36.366 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 17:40:50.652 +08:00 [WRN] API request failed: vehicle-files, StatusCode: "RequestEntityTooLarge", Response: Request Entity Too Large
+2025-09-09 17:40:50.672 +08:00 [ERR] Exception during API request: vehicle-files
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<PostMultipartAsync>d__8`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 128
+2025-09-09 17:46:11.442 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 17:46:11.494 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 17:46:21.578 +08:00 [WRN] API request failed: vehicle-files, StatusCode: "RequestEntityTooLarge", Response: Request Entity Too Large
+2025-09-09 17:46:21.597 +08:00 [ERR] Exception during API request: vehicle-files
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<PostMultipartAsync>d__8`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 128
+2025-09-09 17:49:51.292 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 17:49:51.344 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 17:50:06.015 +08:00 [WRN] API request failed: vehicle-files, StatusCode: "RequestEntityTooLarge", Response: Request Entity Too Large
+2025-09-09 17:50:06.034 +08:00 [ERR] Exception during API request: vehicle-files
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<PostMultipartAsync>d__8`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 128
+2025-09-09 17:53:21.899 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 17:53:21.947 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76
+2025-09-09 17:53:31.561 +08:00 [WRN] API request failed: vehicle-files, StatusCode: "RequestEntityTooLarge", Response: Request Entity Too Large
+2025-09-09 17:53:31.584 +08:00 [ERR] Exception during API request: vehicle-files
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<PostMultipartAsync>d__8`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 128
+2025-09-09 17:55:25.643 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "NotFound", Response: Cannot GET /api/user-permissions/8
+2025-09-09 17:55:25.690 +08:00 [ERR] Exception during API request: user-permissions/8
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at smpc_admin.Utils.HttpClientHelper.<SendRequestAsync>d__7`1.MoveNext() in D:\IGIE\ERP\smpc_admin\Utils\HttpClientHelper.cs:line 76

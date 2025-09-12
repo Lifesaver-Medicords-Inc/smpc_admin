@@ -111,7 +111,7 @@ namespace smpc_admin.Pages.Users
             {
                 var res = await PositionService.GetAllPositionAsync();
 
-                if (res.Success)
+                if (res != null && res.Success)
                 {
                     _positions = res.Data;
                 }

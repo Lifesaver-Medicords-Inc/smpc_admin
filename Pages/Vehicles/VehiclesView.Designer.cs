@@ -30,6 +30,8 @@ namespace smpc_admin.Pages.Vehicles
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -41,6 +43,7 @@ namespace smpc_admin.Pages.Vehicles
             this.VehiclesDataGridView = new System.Windows.Forms.DataGridView();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +54,8 @@ namespace smpc_admin.Pages.Vehicles
             this.Status = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.LastMaintenance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Warehouse = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Files = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -89,7 +94,7 @@ namespace smpc_admin.Pages.Vehicles
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1105, 862);
+            this.splitContainer1.Size = new System.Drawing.Size(1082, 862);
             this.splitContainer1.SplitterDistance = 40;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 0;
@@ -121,7 +126,7 @@ namespace smpc_admin.Pages.Vehicles
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer2.Size = new System.Drawing.Size(1105, 821);
+            this.splitContainer2.Size = new System.Drawing.Size(1082, 821);
             this.splitContainer2.SplitterDistance = 45;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -142,7 +147,7 @@ namespace smpc_admin.Pages.Vehicles
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
             this.splitContainer3.Panel2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.splitContainer3.Size = new System.Drawing.Size(1105, 45);
+            this.splitContainer3.Size = new System.Drawing.Size(1082, 45);
             this.splitContainer3.SplitterDistance = 145;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -171,8 +176,8 @@ namespace smpc_admin.Pages.Vehicles
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 0);
-            this.splitContainer4.Size = new System.Drawing.Size(956, 35);
-            this.splitContainer4.SplitterDistance = 503;
+            this.splitContainer4.Size = new System.Drawing.Size(933, 35);
+            this.splitContainer4.SplitterDistance = 490;
             this.splitContainer4.TabIndex = 0;
             // 
             // WareHouseComboBox
@@ -182,7 +187,7 @@ namespace smpc_admin.Pages.Vehicles
             this.WareHouseComboBox.FormattingEnabled = true;
             this.WareHouseComboBox.Location = new System.Drawing.Point(0, 11);
             this.WareHouseComboBox.Name = "WareHouseComboBox";
-            this.WareHouseComboBox.Size = new System.Drawing.Size(503, 24);
+            this.WareHouseComboBox.Size = new System.Drawing.Size(490, 24);
             this.WareHouseComboBox.TabIndex = 0;
             this.WareHouseComboBox.SelectedIndexChanged += new System.EventHandler(this.WareHouseComboBox_SelectedIndexChanged);
             // 
@@ -204,8 +209,8 @@ namespace smpc_admin.Pages.Vehicles
             this.splitContainer5.Panel2.Controls.Add(this.SaveBtn);
             this.splitContainer5.Panel2.Controls.Add(this.CancelBtn);
             this.splitContainer5.Panel2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 2);
-            this.splitContainer5.Size = new System.Drawing.Size(1105, 772);
-            this.splitContainer5.SplitterDistance = 738;
+            this.splitContainer5.Size = new System.Drawing.Size(1082, 772);
+            this.splitContainer5.SplitterDistance = 728;
             this.splitContainer5.SplitterWidth = 5;
             this.splitContainer5.TabIndex = 0;
             // 
@@ -234,7 +239,17 @@ namespace smpc_admin.Pages.Vehicles
             this.Capacity,
             this.Status,
             this.LastMaintenance,
-            this.Notes});
+            this.Notes,
+            this.Warehouse,
+            this.Files});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.VehiclesDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.VehiclesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.VehiclesDataGridView.Location = new System.Drawing.Point(0, 0);
             this.VehiclesDataGridView.MultiSelect = false;
@@ -244,17 +259,17 @@ namespace smpc_admin.Pages.Vehicles
             this.VehiclesDataGridView.RowTemplate.Height = 30;
             this.VehiclesDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.VehiclesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.VehiclesDataGridView.Size = new System.Drawing.Size(1105, 738);
+            this.VehiclesDataGridView.Size = new System.Drawing.Size(1082, 728);
             this.VehiclesDataGridView.TabIndex = 0;
             // 
             // SaveBtn
             // 
             this.SaveBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveBtn.Location = new System.Drawing.Point(883, 3);
+            this.SaveBtn.Location = new System.Drawing.Point(860, 3);
             this.SaveBtn.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(110, 24);
+            this.SaveBtn.Size = new System.Drawing.Size(110, 34);
             this.SaveBtn.TabIndex = 1;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
@@ -265,22 +280,32 @@ namespace smpc_admin.Pages.Vehicles
             this.CancelBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.CancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelBtn.ForeColor = System.Drawing.Color.Red;
-            this.CancelBtn.Location = new System.Drawing.Point(993, 3);
+            this.CancelBtn.Location = new System.Drawing.Point(970, 3);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(110, 24);
+            this.CancelBtn.Size = new System.Drawing.Size(110, 34);
             this.CancelBtn.TabIndex = 0;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = true;
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "files";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "smpc_admin.Properties.Resources.FolderIcon";
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewImageColumn1.HeaderText = "FILES";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn1.Width = 133;
+            // 
             // Id
             // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
             this.Id.Visible = false;
-            this.Id.Width = 5;
             // 
             // Type
             // 
@@ -358,6 +383,25 @@ namespace smpc_admin.Pages.Vehicles
             this.Notes.HeaderText = "NOTES";
             this.Notes.Name = "Notes";
             // 
+            // Warehouse
+            // 
+            this.Warehouse.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Warehouse.DataPropertyName = "WarehouseId";
+            this.Warehouse.HeaderText = "WAREHOUSE";
+            this.Warehouse.Name = "Warehouse";
+            this.Warehouse.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Warehouse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Warehouse.Width = 130;
+            // 
+            // Files
+            // 
+            this.Files.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Files.DataPropertyName = "Files";
+            this.Files.HeaderText = "FILES";
+            this.Files.Image = global::smpc_admin.Properties.Resources.folder_icon;
+            this.Files.Name = "Files";
+            this.Files.Width = 60;
+            // 
             // VehiclesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,7 +409,7 @@ namespace smpc_admin.Pages.Vehicles
             this.Controls.Add(this.splitContainer1);
             this.Name = "VehiclesView";
             this.Padding = new System.Windows.Forms.Padding(4);
-            this.Size = new System.Drawing.Size(1113, 870);
+            this.Size = new System.Drawing.Size(1090, 870);
             this.Load += new System.EventHandler(this.VehiclesView_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -406,6 +450,7 @@ namespace smpc_admin.Pages.Vehicles
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button CancelBtn;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewComboBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Model;
@@ -416,5 +461,7 @@ namespace smpc_admin.Pages.Vehicles
         private System.Windows.Forms.DataGridViewComboBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastMaintenance;
         private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Warehouse;
+        private System.Windows.Forms.DataGridViewImageColumn Files;
     }
 }

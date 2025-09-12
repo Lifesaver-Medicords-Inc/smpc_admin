@@ -87,6 +87,60 @@ namespace smpc_admin.Utils
             }
         }
 
+        public static async Task<T> PostMultipartAsync<T>(string url, HttpContent content)
+        {
+            try
+            {
+                LoaderIndicatorOverlay.ShowOverlay();
+
+                var requestMessage = new HttpRequestMessage(HttpMethod.Post, url)
+                {
+                    Content = content
+                };
+
+                if (!string.IsNullOrWhiteSpace(SessionToken))
+                {
+                    if (client.DefaultRequestHeaders.Contains("Authorization"))
+                        client.DefaultRequestHeaders.Remove("Authorization");
+
+                    client.DefaultRequestHeaders.Add("Authorization", SessionToken);
+                }
+
+                var response = await client.SendAsync(requestMessage);
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                if (string.IsNullOrEmpty(SessionToken) && response.Headers.Contains("Set-Cookie"))
+                {
+                    var cookies = response.Headers.GetValues("Set-Cookie").ToList();
+                    string token = ExtractToken(cookies.FirstOrDefault());
+                    SessionToken = token;
+                }
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<T>(responseContent);
+                }
+                else
+                {
+                    Log.Warning("API request failed: {Url}, StatusCode: {StatusCode}, Response: {Response}",
+                        url, response.StatusCode, responseContent);
+                    return JsonConvert.DeserializeObject<T>(responseContent);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Exception during API request: {Url}", url);
+                return default;
+            }
+            finally
+            {
+                LoaderIndicatorOverlay.HideOverlay();
+            }
+        }
+
+
+
         public static async Task<T> Get<T>(string url) => await SendRequestAsync<T>(url, HttpMethod.Get);
 
         public static async Task<T> Post<T>(string url, object payload)

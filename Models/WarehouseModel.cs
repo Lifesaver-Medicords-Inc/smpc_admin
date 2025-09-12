@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace smpc_admin.Models
 {
-    class WarehouseModel
+    public class WarehouseModel
     {
         [JsonProperty("id")]
         public int Id { get; set; }
