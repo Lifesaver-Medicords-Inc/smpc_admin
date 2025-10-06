@@ -9,6 +9,7 @@ using System.Linq;
 using System.Windows.Forms;
 using smpc_admin.Models;
 using smpc_admin.Services;
+using smpc_admin.Properties;
 
 namespace smpc_admin.Pages.Vehicles
 {
@@ -213,9 +214,10 @@ namespace smpc_admin.Pages.Vehicles
             }
         }
 
-
+        
         private Image GetIconForMimeType(string mimeType)
         {
+            
             if (string.IsNullOrEmpty(mimeType))
                 return Properties.Resources.folder_unknown;
 

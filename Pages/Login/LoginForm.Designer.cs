@@ -125,6 +125,7 @@ namespace smpc_admin.Pages.Login
             this.MaximumSize = new System.Drawing.Size(360, 300);
             this.MinimumSize = new System.Drawing.Size(360, 300);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
             this.formInputPanel.ResumeLayout(false);
             this.formInputPanel.PerformLayout();

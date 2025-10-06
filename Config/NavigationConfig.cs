@@ -40,6 +40,20 @@ namespace smpc_admin.Config
                         IsParent = false,
 
                     },
+                     new NavigationItem
+                    {
+                        Code = "ADMIN COMPANIES",
+                        Text = "Companies",
+                        IsParent = false,
+
+                    },
+                     new NavigationItem
+                    {
+                        Code = "ADMIN CURRENCY",
+                        Text = "Currency",
+                        IsParent = false,
+
+                    },
                 }
             }
         };

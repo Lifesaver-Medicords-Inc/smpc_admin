@@ -135,6 +135,10 @@
     <Compile Include="Constants\VehicleStatusEnum.cs" />
     <Compile Include="Constants\VehicleTypesEnum.cs" />
     <Compile Include="Logging\LoggerConfig.cs" />
+    <Compile Include="Models\CompanyAddressModel.cs" />
+    <Compile Include="Models\CompanyContactModel.cs" />
+    <Compile Include="Models\CompanyModel.cs" />
+    <Compile Include="Models\CurrencyModel.cs" />
     <Compile Include="Models\VehicleFileModel.cs" />
     <Compile Include="Models\HttpResponse.cs" />
     <Compile Include="Models\PositionAccessModel.cs" />
@@ -166,6 +170,30 @@
     </Compile>
     <Compile Include="Pages\AccessControls\UserDetailsCardDialogForm.Designer.cs">
       <DependentUpon>UserDetailsCardDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Companies\CompaniesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Companies\CompaniesView.Designer.cs">
+      <DependentUpon>CompaniesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Companies\CompanyAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Companies\CompanyAddress.Designer.cs">
+      <DependentUpon>CompanyAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Companies\CompanySetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Companies\CompanySetup.Designer.cs">
+      <DependentUpon>CompanySetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Companies\CreateCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Companies\CreateCompanyForm.Designer.cs">
+      <DependentUpon>CreateCompanyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Layout\MainLayoutForm.cs">
       <SubType>Form</SubType>
@@ -229,6 +257,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\CompanyService.cs" />
     <Compile Include="Services\VehicleFileService.cs" />
     <Compile Include="Services\PositionAccessService.cs" />
     <Compile Include="Services\PositionService.cs" />
@@ -253,6 +282,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\AccessControls\UserDetailsCardDialogForm.resx">
       <DependentUpon>UserDetailsCardDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Companies\CompaniesView.resx">
+      <DependentUpon>CompaniesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Companies\CompanyAddress.resx">
+      <DependentUpon>CompanyAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Companies\CompanySetup.resx">
+      <DependentUpon>CompanySetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Companies\CreateCompanyForm.resx">
+      <DependentUpon>CreateCompanyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Layout\MainLayoutForm.resx">
       <DependentUpon>MainLayoutForm.cs</DependentUpon>
@@ -351,6 +392,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\folder_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\icon_company_address.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\icon_add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Serilog.4.3.0\build\Serilog.targets" Condition="Exists('packages\Serilog.4.3.0\build\Serilog.targets')" />

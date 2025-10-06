@@ -259,6 +259,7 @@ namespace smpc_admin.Pages.Vehicles
                 Notes = row.Cells["Notes"].Value?.ToString(),
                 Id = int.TryParse(row.Cells["Id"].Value?.ToString(), out int idVal) ? idVal : 0,
                 WarehouseId = int.TryParse(row.Cells["Warehouse"].Value?.ToString(), out int val) ? val : 0
+
             };
         }
 

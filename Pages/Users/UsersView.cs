@@ -143,8 +143,6 @@ namespace smpc_admin.Pages.Users
                     _users.Add(user);
 
                     PopulateGrid(_users);
-
-
                 };
 
                 detailsForm.DeleteSuccess += (id) =>

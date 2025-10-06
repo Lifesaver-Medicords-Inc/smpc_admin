@@ -1,6 +1,0 @@
-2025-09-05 10:04:25.526 +08:00 [WRN] API request failed: login, StatusCode: "Unauthorized", Response: {"message":"invalid user credential","success":false}
-2025-09-05 10:06:29.908 +08:00 [WRN] API request failed: positions/1, StatusCode: "InternalServerError", Response: {"message":"failed getting position","success":false}
-2025-09-05 10:06:44.937 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "InternalServerError", Response: {"message":"failed getting user permission","success":false}
-2025-09-05 10:49:49.169 +08:00 [WRN] API request failed: positions/1, StatusCode: "InternalServerError", Response: {"message":"failed getting position","success":false}
-2025-09-05 10:50:04.208 +08:00 [WRN] API request failed: user-permissions/8, StatusCode: "InternalServerError", Response: {"message":"failed getting user permission","success":false}
-2025-09-05 18:03:24.959 +08:00 [WRN] API request failed: vehicles/1, StatusCode: "BadRequest", Response: {"message":"Invalid request body","success":false}

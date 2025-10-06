@@ -29,7 +29,6 @@ namespace smpc_admin.Pages.Shared
             // Spinner image
             if (pictureBox.Image == null)
                 pictureBox.Image = Properties.Resources.spinner;
-
             _originalImage = pictureBox.Image;
 
             pictureBox.Location = new Point(

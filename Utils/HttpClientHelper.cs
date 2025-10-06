@@ -79,12 +79,18 @@ namespace smpc_admin.Utils
             catch (Exception ex)
             {
                 Log.Error(ex, "Exception during API request: {Url}", url);
+                Console.WriteLine("ERROR:" + ex);
                 return default;
             }
             finally
             {
                 LoaderIndicatorOverlay.HideOverlay();
             }
+        }
+
+        internal static Task Put<T>(string v)
+        {
+            throw new NotImplementedException();
         }
 
         public static async Task<T> PostMultipartAsync<T>(string url, HttpContent content)

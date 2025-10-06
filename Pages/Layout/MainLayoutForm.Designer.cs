@@ -89,6 +89,7 @@ namespace smpc_admin.Pages.Layout
             this.ClientSize = new System.Drawing.Size(1122, 874);
             this.Controls.Add(this.mainSplitContainer);
             this.Name = "MainLayoutForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMPC Admin";
             this.mainSplitContainer.Panel1.ResumeLayout(false);
             this.mainSplitContainer.Panel2.ResumeLayout(false);

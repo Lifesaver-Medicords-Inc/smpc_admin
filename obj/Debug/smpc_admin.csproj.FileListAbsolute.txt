@@ -133,6 +133,8 @@ D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.AccessControls.AccessControlVi
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.AccessControls.PositionAccess.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.AccessControls.PositionUsers.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.AccessControls.UserDetailsCardDialogForm.resources
+D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Companies.CompaniesView.resources
+D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Companies.CreateCompanyForm.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Layout.MainLayoutForm.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Login.LoginForm.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Shared.LoaderIndicatorOverlay.resources
@@ -140,6 +142,7 @@ D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Shared.RedBoxForm.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Users.CreateUserForm.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Users.UserDetailsForm.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Users.UsersView.resources
+D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Vehicles.VehicleFilesDialogForm.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Vehicles.VehiclesView.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Properties.Resources.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.csproj.GenerateResource.cache
@@ -147,5 +150,6 @@ D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.csproj.CoreCompileInputs.cache
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.csproj.CopyComplete
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.exe
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.pdb
-D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Vehicles.VehicleFilesDialogForm.resources
 D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.csproj.AssemblyReference.cache
+D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Companies.CompanyAddress.resources
+D:\IGIE\ERP\smpc_admin\obj\Debug\smpc_admin.Pages.Companies.CompanySetup.resources

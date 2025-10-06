@@ -7,8 +7,8 @@ using System.Windows.Forms;
 using smpc_admin.Pages.AccessControls;
 using smpc_admin.Pages.Users;
 using smpc_admin.Pages.Vehicles;
-
-
+using smpc_admin.Pages.Companies;
+using smpc_admin.Pages.Login;
 
 
 namespace smpc_admin.Services
@@ -20,8 +20,9 @@ namespace smpc_admin.Services
 
             {"ADMIN ACCESS CONTROL", new AccessControlView()},
             {"ADMIN USERS", new UsersView()},
-            {"ADMIN VEHICLES", new VehiclesView() }
- 
+            {"ADMIN VEHICLES", new VehiclesView() },
+            {"ADMIN COMPANIES", new CompaniesView() },
+
 
         };
 
