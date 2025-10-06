@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\IGIE\\ERP\\smpc_admin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{67DE6FE5-EDBC-439F-9EDF-231770DD0CD1}|smpc_admin.csproj|d:\\igie\\erp\\smpc_admin\\pages\\users\\usersview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{67DE6FE5-EDBC-439F-9EDF-231770DD0CD1}|smpc_admin.csproj|solutionrelative:pages\\users\\usersview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DE6FE5-EDBC-439F-9EDF-231770DD0CD1}|smpc_admin.csproj|d:\\igie\\erp\\smpc_admin\\pages\\users\\usersview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DE6FE5-EDBC-439F-9EDF-231770DD0CD1}|smpc_admin.csproj|solutionrelative:pages\\users\\usersview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DE6FE5-EDBC-439F-9EDF-231770DD0CD1}|smpc_admin.csproj|d:\\igie\\erp\\smpc_admin\\pages\\users\\userdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{67DE6FE5-EDBC-439F-9EDF-231770DD0CD1}|smpc_admin.csproj|solutionrelative:pages\\users\\userdetailsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DE6FE5-EDBC-439F-9EDF-231770DD0CD1}|smpc_admin.csproj|d:\\igie\\erp\\smpc_admin\\pages\\users\\createuserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{67DE6FE5-EDBC-439F-9EDF-231770DD0CD1}|smpc_admin.csproj|solutionrelative:pages\\users\\createuserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsersView.cs",
+              "DocumentMoniker": "D:\\IGIE\\ERP\\smpc_admin\\Pages\\Users\\UsersView.cs",
+              "RelativeDocumentMoniker": "Pages\\Users\\UsersView.cs",
+              "ToolTip": "D:\\IGIE\\ERP\\smpc_admin\\Pages\\Users\\UsersView.cs",
+              "RelativeToolTip": "Pages\\Users\\UsersView.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAiwGAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T01:54:48.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersView.cs [Design]",
+              "DocumentMoniker": "D:\\IGIE\\ERP\\smpc_admin\\Pages\\Users\\UsersView.cs",
+              "RelativeDocumentMoniker": "Pages\\Users\\UsersView.cs",
+              "ToolTip": "D:\\IGIE\\ERP\\smpc_admin\\Pages\\Users\\UsersView.cs [Design]",
+              "RelativeToolTip": "Pages\\Users\\UsersView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T01:54:45.64Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserDetailsForm.cs [Design]",
+              "DocumentMoniker": "D:\\IGIE\\ERP\\smpc_admin\\Pages\\Users\\UserDetailsForm.cs",
+              "RelativeDocumentMoniker": "Pages\\Users\\UserDetailsForm.cs",
+              "ToolTip": "D:\\IGIE\\ERP\\smpc_admin\\Pages\\Users\\UserDetailsForm.cs [Design]*",
+              "RelativeToolTip": "Pages\\Users\\UserDetailsForm.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T01:54:40.332Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateUserForm.cs [Design]",
+              "DocumentMoniker": "D:\\IGIE\\ERP\\smpc_admin\\Pages\\Users\\CreateUserForm.cs",
+              "RelativeDocumentMoniker": "Pages\\Users\\CreateUserForm.cs",
+              "ToolTip": "D:\\IGIE\\ERP\\smpc_admin\\Pages\\Users\\CreateUserForm.cs [Design]*",
+              "RelativeToolTip": "Pages\\Users\\CreateUserForm.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T01:54:39.852Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

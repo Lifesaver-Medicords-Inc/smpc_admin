@@ -210,7 +210,7 @@ namespace smpc_admin.Pages.Vehicles
             this.splitContainer5.Panel2.Controls.Add(this.CancelBtn);
             this.splitContainer5.Panel2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 2);
             this.splitContainer5.Size = new System.Drawing.Size(1082, 772);
-            this.splitContainer5.SplitterDistance = 722;
+            this.splitContainer5.SplitterDistance = 721;
             this.splitContainer5.SplitterWidth = 5;
             this.splitContainer5.TabIndex = 0;
             // 
@@ -259,7 +259,7 @@ namespace smpc_admin.Pages.Vehicles
             this.VehiclesDataGridView.RowTemplate.Height = 30;
             this.VehiclesDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.VehiclesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.VehiclesDataGridView.Size = new System.Drawing.Size(1082, 722);
+            this.VehiclesDataGridView.Size = new System.Drawing.Size(1082, 721);
             this.VehiclesDataGridView.TabIndex = 0;
             // 
             // Id
@@ -371,7 +371,7 @@ namespace smpc_admin.Pages.Vehicles
             this.SaveBtn.Location = new System.Drawing.Point(860, 3);
             this.SaveBtn.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(110, 40);
+            this.SaveBtn.Size = new System.Drawing.Size(110, 41);
             this.SaveBtn.TabIndex = 1;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
@@ -384,7 +384,7 @@ namespace smpc_admin.Pages.Vehicles
             this.CancelBtn.ForeColor = System.Drawing.Color.Red;
             this.CancelBtn.Location = new System.Drawing.Point(970, 3);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(110, 40);
+            this.CancelBtn.Size = new System.Drawing.Size(110, 41);
             this.CancelBtn.TabIndex = 0;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = true;

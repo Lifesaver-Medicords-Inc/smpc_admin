@@ -35,8 +35,12 @@ namespace smpc_admin.Pages.Companies
             this.SaveBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.EndFiscalDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.StartFiscalDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -51,10 +55,6 @@ namespace smpc_admin.Pages.Companies
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.MonthlyRateTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.StartFiscalDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.EndFiscalDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -62,15 +62,15 @@ namespace smpc_admin.Pages.Companies
             this.panel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -161,6 +161,30 @@ namespace smpc_admin.Pages.Companies
             this.panel4.Size = new System.Drawing.Size(499, 44);
             this.panel4.TabIndex = 5;
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.Controls.Add(this.EndFiscalDateTimePicker, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 17);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(499, 27);
+            this.tableLayoutPanel6.TabIndex = 8;
+            // 
+            // EndFiscalDateTimePicker
+            // 
+            this.EndFiscalDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EndFiscalDateTimePicker.Location = new System.Drawing.Point(3, 3);
+            this.EndFiscalDateTimePicker.Name = "EndFiscalDateTimePicker";
+            this.EndFiscalDateTimePicker.Size = new System.Drawing.Size(160, 20);
+            this.EndFiscalDateTimePicker.TabIndex = 4;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -181,6 +205,30 @@ namespace smpc_admin.Pages.Companies
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(499, 44);
             this.panel2.TabIndex = 4;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.Controls.Add(this.StartFiscalDateTimePicker, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 17);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(499, 27);
+            this.tableLayoutPanel5.TabIndex = 7;
+            // 
+            // StartFiscalDateTimePicker
+            // 
+            this.StartFiscalDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StartFiscalDateTimePicker.Location = new System.Drawing.Point(3, 3);
+            this.StartFiscalDateTimePicker.Name = "StartFiscalDateTimePicker";
+            this.StartFiscalDateTimePicker.Size = new System.Drawing.Size(160, 20);
+            this.StartFiscalDateTimePicker.TabIndex = 3;
             // 
             // label5
             // 
@@ -340,54 +388,6 @@ namespace smpc_admin.Pages.Companies
             this.label3.TabIndex = 0;
             this.label3.Text = "Monthly Rate";
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.Controls.Add(this.StartFiscalDateTimePicker, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 17);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(499, 27);
-            this.tableLayoutPanel5.TabIndex = 7;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.Controls.Add(this.EndFiscalDateTimePicker, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 17);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(499, 27);
-            this.tableLayoutPanel6.TabIndex = 8;
-            // 
-            // StartFiscalDateTimePicker
-            // 
-            this.StartFiscalDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StartFiscalDateTimePicker.Location = new System.Drawing.Point(3, 3);
-            this.StartFiscalDateTimePicker.Name = "StartFiscalDateTimePicker";
-            this.StartFiscalDateTimePicker.Size = new System.Drawing.Size(160, 20);
-            this.StartFiscalDateTimePicker.TabIndex = 3;
-            // 
-            // EndFiscalDateTimePicker
-            // 
-            this.EndFiscalDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EndFiscalDateTimePicker.Location = new System.Drawing.Point(3, 3);
-            this.EndFiscalDateTimePicker.Name = "EndFiscalDateTimePicker";
-            this.EndFiscalDateTimePicker.Size = new System.Drawing.Size(160, 20);
-            this.EndFiscalDateTimePicker.TabIndex = 4;
-            // 
             // CompanySetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,8 +406,10 @@ namespace smpc_admin.Pages.Companies
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -420,8 +422,6 @@ namespace smpc_admin.Pages.Companies
             this.panel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
